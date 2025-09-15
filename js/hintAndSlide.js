@@ -80,19 +80,52 @@ document.addEventListener("keydown", (event) => {
 })
 
 
-startX = 0;
+
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+function toggleFullscreen(elementId) {
+    
+    const elem = document.getElementById(elementId);
+    elem.addEventListener("touchstart", handleTouchStart, false);
+    elem.addEventListener("touchmove", handleTouchMove, false);
+    if (!document.fullscreenElement) {
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+        } else if (elem.webkitRequestFullscreen) { /* Safari */
+            elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) { /* IE11 */
+            elem.msRequestFullscreen();
+        }
+    } else {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        }
+    }
+}
+
+function handleTouchStart(evt) {
+    startX = evt.touches[0].clientX;
+}
+
 function handleTouchMove(evt) {
     if (!startX) return;
     let deltaX = evt.touches[0].clientX - startX;
     if (Math.abs(deltaX) > 50) {  // soglia minima per considerare swipe
         if (deltaX > 0) {
-            previousSlide(currentSlide);
+            previousSlide(2);
         } else {
-            nextSlide(currentSlide);
+            nextSlide(2);
         }
         startX = 0; // reset
     }
 }
+
+let startX = 0;
+
+const container = document.getElementById("slide-containervOdHcoJ(3)");
+container.addEventListener("touchstart", handleTouchStart, false);
+container.addEventListener("touchmove", handleTouchMove, false);
+
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 
 
 //funzione per passare alla slide successiva
