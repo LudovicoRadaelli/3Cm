@@ -1,5 +1,8 @@
 function toggleFullscreen(elementId) {
+    
     const elem = document.getElementById(elementId);
+    elem.addEventListener("touchstart", handleTouchStart, false);
+    elem.addEventListener("touchmove", handleTouchMove, false);
     if (!document.fullscreenElement) {
         if (elem.requestFullscreen) {
             elem.requestFullscreen();
@@ -35,8 +38,5 @@ function handleTouchMove(evt) {
     }
 }
 
-const container = document.getElementById("slide-container2");
-container.addEventListener("touchstart", handleTouchStart, false);
-container.addEventListener("touchmove", handleTouchMove, false);
 
 
