@@ -80,6 +80,21 @@ document.addEventListener("keydown", (event) => {
 })
 
 
+startX = 0;
+function handleTouchMove(evt) {
+    if (!startX) return;
+    let deltaX = evt.touches[0].clientX - startX;
+    if (Math.abs(deltaX) > 50) {  // soglia minima per considerare swipe
+        if (deltaX > 0) {
+            previousSlide(currentSlide);
+        } else {
+            nextSlide(currentSlide);
+        }
+        startX = 0; // reset
+    }
+}
+
+
 //funzione per passare alla slide successiva
 function nextSlide(n) {
 
