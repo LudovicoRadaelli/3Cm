@@ -80,54 +80,6 @@ document.addEventListener("keydown", (event) => {
 })
 
 
-
-/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
-function toggleFullscreen(elementId) {
-    
-    const elem = document.getElementById(elementId);
-    elem.addEventListener("touchstart", handleTouchStart, false);
-    elem.addEventListener("touchmove", handleTouchMove, false);
-    if (!document.fullscreenElement) {
-        if (elem.requestFullscreen) {
-            elem.requestFullscreen();
-        } else if (elem.webkitRequestFullscreen) { /* Safari */
-            elem.webkitRequestFullscreen();
-        } else if (elem.msRequestFullscreen) { /* IE11 */
-            elem.msRequestFullscreen();
-        }
-    } else {
-        if (document.exitFullscreen) {
-            document.exitFullscreen();
-        }
-    }
-}
-
-function handleTouchStart(evt) {
-    startX = evt.touches[0].clientX;
-}
-
-function handleTouchMove(evt) {
-    if (!startX) return;
-    let deltaX = evt.touches[0].clientX - startX;
-    if (Math.abs(deltaX) > 50) {  // soglia minima per considerare swipe
-        if (deltaX > 0) {
-            previousSlide(2);
-        } else {
-            nextSlide(2);
-        }
-        startX = 0; // reset
-    }
-}
-
-let startX = 0;
-
-const container = document.getElementById("slide-containervOdHcoJ(3)");
-container.addEventListener("touchstart", handleTouchStart, false);
-container.addEventListener("touchmove", handleTouchMove, false);
-
-/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
-
-
 //funzione per passare alla slide successiva
 function nextSlide(n) {
 
@@ -249,3 +201,92 @@ function inizialize(n) {
     document.getElementById(`previousSlide-button${obj.targa}`).disabled = true;
 
 }
+
+
+// === FULLSCREEN ===
+function toggleFullscreen(n) {
+  const el = document.getElementById(`slide-container${n}`);
+  if (!document.fullscreenElement) {
+    // alcuni browser ignorano navigationUI, ma non fa male
+    el.requestFullscreen?.({ navigationUI: "hide" }) || el.requestFullscreen?.();
+  } else {
+    document.exitFullscreen?.();
+  }
+}
+
+// Esci dal fullscreen con ESC e aggiorna il focus dei tasti
+document.addEventListener("fullscreenchange", () => {
+  // opzionale: potresti voler rifocalizzare i bottoni
+});
+
+// === SWIPE / DRAG ===
+// Attiva swipe per una singola raccolta (targa = n)
+function enableSwipe(n) {
+  const el = document.getElementById(`slide-container${n}`);
+  if (!el) return;
+
+  let startX = 0, startY = 0, isTouch = false;
+  let mDown = false, mStartX = 0, mStartY = 0;
+
+  const THRESHOLD = 50;   // pixel orizzontali minimi per considerare lo swipe
+  const RESTRAINT = 100;  // quanto si può deviare in verticale
+
+  // --- Touch ---
+  el.addEventListener("touchstart", (e) => {
+    const t = e.changedTouches[0];
+    startX = t.clientX; startY = t.clientY;
+    isTouch = true;
+  }, { passive: true });
+
+  el.addEventListener("touchend", (e) => {
+    if (!isTouch) return;
+    const t = e.changedTouches[0];
+    const dx = t.clientX - startX;
+    const dy = t.clientY - startY;
+
+    if (Math.abs(dx) > THRESHOLD && Math.abs(dy) < RESTRAINT) {
+      if (dx < 0 && !document.getElementById(`nextSlide-button${n}`).disabled) {
+        nextSlide(n);
+      } else if (dx > 0 && !document.getElementById(`previousSlide-button${n}`).disabled) {
+        previousSlide(n);
+      }
+    }
+    isTouch = false;
+  }, { passive: true });
+
+  // --- Mouse drag (desktop) ---
+  el.addEventListener("mousedown", (e) => {
+    mDown = true;
+    mStartX = e.clientX; mStartY = e.clientY;
+  });
+  window.addEventListener("mouseup", (e) => {
+    if (!mDown) return;
+    const dx = e.clientX - mStartX;
+    const dy = e.clientY - mStartY;
+    if (Math.abs(dx) > THRESHOLD && Math.abs(dy) < RESTRAINT) {
+      if (dx < 0 && !document.getElementById(`nextSlide-button${n}`).disabled) {
+        nextSlide(n);
+      } else if (dx > 0 && !document.getElementById(`previousSlide-button${n}`).disabled) {
+        previousSlide(n);
+      }
+    }
+    mDown = false;
+  });
+}
+
+// === INTEGRAZIONE CON IL TUO CODICE ESISTENTE ===
+// Dopo aver popolato slideContainerList ed aver chiamato inizialize(...),
+// attiva lo swipe su ogni contenitore trovato.
+(function attachSwipeToAll() {
+  try {
+    slideContainerList.forEach(ob => {
+      // attacca swipe una sola volta per raccolta
+      enableSwipe(ob.targa);
+    });
+  } catch (e) {
+    // se lo script viene caricato prima che slideContainerList sia pieno, riprova a DOM ready
+    document.addEventListener('DOMContentLoaded', () => {
+      (slideContainerList || []).forEach(ob => enableSwipe(ob.targa));
+    });
+  }
+})();
