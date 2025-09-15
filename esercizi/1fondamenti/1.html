@@ -8,7 +8,7 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script language="javascript" type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.min.js">
-    </script>    
+    </script>
     <link rel="stylesheet" href="../../css/style.css">
     <title>Compiti per casa</title>
 </head>
@@ -210,12 +210,327 @@
         </div>
         <div style="display: flex; flex-direction:row; justify-content: space-evenly; align-items: center;">
             <button id="previousSlide-buttonvOdHcoJ(3)" onclick="previousSlide(`vOdHcoJ(3)`)">Indietro</button>
-            <button onclick="toggleFullscreen('slide-containervOdHcoJ(3)')">⛶</button>
+            <button onclick="toggleFullscreen('vOdHcoJ(3)')">⛶</button>
             <button id="nextSlide-buttonvOdHcoJ(3)" onclick="nextSlide(`vOdHcoJ(3)`)">Avanti</button>
         </div>
         <br>
 
     </div>
+
+
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+
+
+    <h3 class="green">Esercizio</h3>
+    <br>
+    <div>
+        Individuiamo gli intervalli di monotonia della funzione
+        \[
+        f(x) = \sqrt{9 - x^2}
+        \]
+    </div>
+
+    <br>
+    <br>
+
+    <button id="hintiDXQJmwWaD-button" onclick="showHint(`iDXQJmwWaD`)">Svolgimento</button>
+    <div id="hintiDXQJmwWaD" class="hint" style="display: none;">
+        <div class="grayBorder">
+            Individuiamo gli intervalli di monotonia della funzione
+            \[
+            f(x) = \sqrt{9 - x^2}
+            \]
+
+            <u><b>Dominio</b></u>
+            <br>
+            La funzione \(f\) è definita se
+            \[
+            9 - x^2 \geq 0
+            \]
+            Usiamo il metodo della parabola per risolvere questa disequazione. Partiamo dall'equazione associata
+            \[
+            9 - x^2 = 0 \,\,\,\Rightarrow\,\,\, x^2 = 9 \,\,\,\Rightarrow\,\,\, x = \pm\sqrt{3}
+            \]
+            Il coefficiente di \(x^2\) è negativo, dunque la parabola è
+            <br>
+            <br>
+            <img src="img/iDXQJmwWaD(1).png" style="border: 0; width: 50%;">
+            Il dominio è
+            \[
+            D = [-3\,,\,\,3]
+            \]
+
+            <u><b>Continuità</b></u>
+            <br>
+            La funzione è continua nel suo dominio in quanto composizione di funzioni continue.
+            <br>
+            <br>
+
+            <u><b>Derivabilità</b></u>
+            <br>
+            Calcoliamo la derivata di \(f\).
+            <br>
+            <br>
+            <div id="slide-containeriDXQJmwWaD" class="slide-container iDXQJmwWaD grayBorder">
+                <div class="slideiDXQJmwWaD">
+                    <div class="formula">
+                        \(
+                        \left[\color{red}{}\sqrt{\color{black}{}9 - x^2}\color{black}{}\right]' =
+                        \)
+                    </div>
+                    <span class="gray">
+                        Prima di tutti riscriviamo la radice come una potenza con esponente frazionario.
+                    </span>
+                </div>
+                <div class="slideiDXQJmwWaD">
+                    <div class="formula">
+                        \(
+                        \left[\color{red}{}\left(\color{black}{}9 -
+                        x^2\color{red}{}\right)^{\frac{1}{2}}\color{black}{}\right]' =
+                        \)
+                    </div>
+
+                    <span class="gray">
+                        Prima di tutti riscriviamo la radice come una potenza con esponente frazionario.
+                    </span>
+                </div>
+                <div class="slideiDXQJmwWaD">
+                    <div class="formula">
+                        \(
+                        \left[\left(9 - x^2\right)^{\frac{1}{2}}\right]' =
+                        \)
+                    </div>
+
+                    <span class="gray">
+                        La funzione è composta. Evideziamo la funzione più interna.
+                    </span>
+                </div>
+                <div class="slideiDXQJmwWaD">
+                    <div class="formula">
+                        \(
+                        \left[\left(\color{red}{}9 - x^2\color{black}{}\right)^{\frac{1}{2}}\right]' =
+                        \)
+                    </div>
+
+                    <span class="gray">
+                        La funzione è composta. Evideziamo la funzione più interna.
+                    </span>
+                </div>
+                <div class="slideiDXQJmwWaD">
+                    <div class="formula">
+                        \(
+                        \left[\left(\color{red}{}9 - x^2\color{black}{}\right)^{\frac{1}{2}}\right]' =
+                        \)
+                    </div>
+
+                    <span class="gray">
+                        Calcoliamo la derivata della funzione più esterna e valutiamola in \(\color{red}{}9
+                        -x^2\)
+                    </span>
+                </div>
+                <div class="slideiDXQJmwWaD">
+                    <div class="formula">
+                        \(
+                        \left[\left(\color{red}{}9 - x^2\color{black}{}\right)^{\frac{1}{2}}\right]' =
+                        \dfrac{1}{2}\left(\color{red}{}9 -x^2\color{black}{}\right)^{-\frac{1}{2}} \cdot
+                        \)
+                    </div>
+
+                    <span class="gray">
+                        Calcoliamo la derivata della funzione più esterna e valutiamola in \(\color{red}{}9
+                        -x^2\)
+                    </span>
+                </div>
+                <div class="slideiDXQJmwWaD">
+                    <div class="formula">
+                        \(
+                        \left[\left(9 - x^2\right)^{\frac{1}{2}}\right]' = \dfrac{1}{2}\left(\color{red}{}9
+                        -x^2\color{black}{}\right)^{-\frac{1}{2}} \cdot
+                        \)
+                    </div>
+
+                    <span class="gray">
+                        Moltiplichiamo per la derivata della funzione più interna, \(\color{red}{9 -x^2}\).
+                    </span>
+                </div>
+                <div class="slideiDXQJmwWaD">
+                    <div class="formula">
+                        \(
+                        \left[\left(9 - x^2\right)^{\frac{1}{2}}\right]' = \dfrac{1}{2}\left(\color{red}{}9
+                        -x^2\color{black}{}\right)^{-\frac{1}{2}} \cdot (-2x)
+                        \)
+                    </div>
+
+                    <span class="gray">
+                        Moltiplichiamo per la derivata della funzione più interna, \(\color{red}{9 -x^2}\).
+                    </span>
+                </div>
+                <div class="slideiDXQJmwWaD">
+                    <div class="formula">
+                        \(
+                        \left[\left(9 - x^2\right)^{\frac{1}{2}}\right]' = \dfrac{1}{2}\left(9
+                        -x^2\right)^{\color{red}{}-\color{black}{}\frac{1}{2}} \cdot (-2x)
+                        \)
+                    </div>
+                    <span class="gray">
+                        Trasformiamo la potenza con espondente negativo frazionario
+                    </span>
+                </div>
+                <div class="slideiDXQJmwWaD">
+                    <div class="formula">
+                        \(
+                        \left[\left(9 - x^2\right)^{\frac{1}{2}}\right]' =
+                        \dfrac{1}{2}\color{red}{}\dfrac{1}{\color{black}{}\left(9
+                        -x^2\right)^{\color{black}{}\frac{1}{2}}} \color{black}{}\cdot (-2x)
+                        \)
+                    </div>
+                    <span class="gray">
+                        Trasformiamo la potenza con espondente negativo frazionario
+                    </span>
+                </div>
+                <div class="slideiDXQJmwWaD">
+                    <div class="formula">
+                        \(
+                        \left[\left(9 - x^2\right)^{\frac{1}{2}}\right]' =
+                        \dfrac{1}{2}\dfrac{1}{\color{red}{}\left(\color{black}{}9
+                        -x^2\color{red}{}\right)^{\frac{1}{2}}}\color{black}{} \cdot (-2x)
+                        \)
+                    </div>
+                    <span class="gray">
+                        Trasformiamo la potenza con espondente negativo frazionario
+                    </span>
+                </div>
+                <div class="slideiDXQJmwWaD">
+                    <div class="formula">
+                        \(
+                        \left[\left(9 - x^2\right)^{\frac{1}{2}}\right]' =
+                        \dfrac{1}{2}\dfrac{1}{\color{red}{}\sqrt{\color{black}{}9 -x^2}}\color{black}{} \cdot
+                        (-2x)
+                        \)
+                    </div>
+                    <span class="gray">
+                        Trasformiamo la potenza con espondente negativo frazionario
+                    </span>
+                </div>
+                <div class="slideiDXQJmwWaD">
+                    <div class="formula">
+                        \(
+                        \left[\left(9 - x^2\right)^{\frac{1}{2}}\right]' = \dfrac{1}{2}\dfrac{1}{\sqrt{9 -x^2}}
+                        \cdot (-2x)
+                        \)
+                    </div>
+
+                    <span class="gray">
+                        Semplifichiamo e riscriviamo in modo più compatto.
+                    </span>
+                </div>
+                <div class="slideiDXQJmwWaD">
+                    <div class="formula">
+                        \(
+                        \left[\left(9 - x^2\right)^{\frac{1}{2}}\right]' =
+                        \dfrac{1}{\cancel{2}}\dfrac{1}{\sqrt{9 -x^2}} \cdot (-\cancel{2}x)
+                        \)
+                    </div>
+
+                    <span class="gray">
+                        Semplifichiamo e riscriviamo in modo più compatto.
+                    </span>
+                </div>
+                <div class="slideiDXQJmwWaD">
+                    <div class="formula">
+                        \(
+                        \left[\left(9 - x^2\right)^{\frac{1}{2}}\right]' = \dfrac{-x}{\sqrt{9 -x^2}}
+                        \)
+                    </div>
+                    <span class="gray">
+                        Semplifichiamo e riscriviamo in modo più compatto.
+                    </span>
+                </div>
+
+            </div>
+            <div style="display: flex; flex-direction:row; justify-content: space-evenly; align-items: center;">
+                <button id="previousSlide-buttoniDXQJmwWaD" onclick="previousSlide(`iDXQJmwWaD`)">Indietro</button>
+                <button onclick="toggleFullscreen('iDXQJmwWaD')">⛶</button>
+                <button id="nextSlide-buttoniDXQJmwWaD" onclick="nextSlide(`iDXQJmwWaD`)">Avanti</button>
+            </div>
+            <br>
+            La derivata della funzione è
+            \[
+            f'(x) = \dfrac{-x}{\sqrt{9 -x^2}}
+            \]
+            Le condizioni per le quale la derivata è definita sono
+            \[
+            \begin{cases}
+            \sqrt{9 -x^2} \neq 0
+            \\\\
+            9 -x^2 \geq 0
+            \end{cases}
+            \]
+            La seconda condizione è la stessa presente nel dominio, quindi è sicuramente soddisfatta per valori
+            \(x \in D\).
+            La prima si risolve così
+            \[
+            \sqrt{9 -x^2} \neq 0 \,\,\,\Rightarrow\,\,\, 9 -x^2 \neq 0 \,\,\,\Rightarrow x \neq \pm3
+            \]
+            L'insieme di derviabilità è
+            \[
+            D' = (-3\,,\,\,3)
+            \]
+            La funzione non è derivabile in \(x = \pm3\)
+
+            <br>
+            <br>
+
+            <u><b>Segno derivata</b></u>
+            <br>
+            Studiamo il segno della derivata in \(D'\).
+            \[
+            \begin{align*}
+            f'(x) &amp;\gt 0
+            \\\\
+            \dfrac{-x}{\underset{\color{red}{+}}{\color{gray}{}\underbrace{\color{red}{}\sqrt{9 -x^2}}}} &amp;\gt 0
+            \end{align*}
+            \]
+            Poiché il denominatore è positivo in \(D'\), la frazione è positiva se e solo se il numeratore è
+            positivo:
+            \[
+            \begin{align*}
+            -x &amp;\gt 0
+            \\\\
+            x &amp;\lt 0
+            \end{align*}
+            \]
+
+            Dal segno di \(f'(x)\) deduciamo il seguente schema di monotonia
+            <br>
+            <br>
+            <img src="img/iDXQJmwWaD(2).png" style="border: 0; width: 70%;">
+            <br>
+            La funzione è
+            <br>
+            <br>
+            <ul>
+                <li>
+                    crescente nell'intervallo \((-3\,,\,\,0)\).
+                </li>
+                <br>
+                <li>
+                    decrescente nell'intervallo \((0\,,\,\,3)\).
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+
 
 
 
@@ -224,6 +539,5 @@
     <br>
 
     <script src="../../js/hintAndSlide.js"></script>
-    <script src="../../js/allowfullscreen.js"></script>
 
 </body>
