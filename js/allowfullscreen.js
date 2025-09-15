@@ -40,3 +40,6 @@ function handleTouchMove(evt) {
 
 
 
+const container = document.getElementById("slide-containervOdHcoJ(3)");
+container.addEventListener("touchstart", handleTouchStart, false);
+container.addEventListener("touchmove", handleTouchMove, false);
