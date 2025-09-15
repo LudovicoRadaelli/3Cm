@@ -204,19 +204,35 @@ function inizialize(n) {
 
 
 // === FULLSCREEN ===
-function toggleFullscreen(n) {
+async function toggleFullscreen(n) {
   const el = document.getElementById(`slide-container${n}`);
-  if (!document.fullscreenElement) {
-    // alcuni browser ignorano navigationUI, ma non fa male
-    el.requestFullscreen?.({ navigationUI: "hide" }) || el.requestFullscreen?.();
-  } else {
-    document.exitFullscreen?.();
+  try {
+    if (!document.fullscreenElement) {
+      // entra in fullscreen
+      if (el.requestFullscreen) {
+        await el.requestFullscreen({ navigationUI: "hide" });
+      } else if (el.webkitRequestFullscreen) {
+        el.webkitRequestFullscreen(); // Safari legacy
+      }
+      // prova a bloccare in landscape
+      if (screen.orientation?.lock) {
+        try { await screen.orientation.lock("landscape"); } catch(e) {}
+      }
+    } else {
+      // esci dal fullscreen e sblocca orientamento
+      if (document.exitFullscreen) await document.exitFullscreen();
+      if (screen.orientation?.unlock) screen.orientation.unlock();
+    }
+  } catch (err) {
+    console.warn("Fullscreen/orientation lock non riuscito:", err);
   }
 }
 
-// Esci dal fullscreen con ESC e aggiorna il focus dei tasti
+// opzionale: se l’utente esce con ESC, sblocca l’orientamento
 document.addEventListener("fullscreenchange", () => {
-  // opzionale: potresti voler rifocalizzare i bottoni
+  if (!document.fullscreenElement && screen.orientation?.unlock) {
+    try { screen.orientation.unlock(); } catch(e) {}
+  }
 });
 
 // === SWIPE / DRAG ===
