@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script language="javascript" type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.min.js">
+    </script>
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>Compiti per casa</title>
+</head>
+
+<body>
+    <h1>Compiti per casa</h1>
+
+    <br>
+
+    <h3 class="yellow">Polinomi di secondo grado e parabola</h3>
+    <div class="esempi-container">
+        Il grafico di un <b>polinomio di secondo grado</b> \(ax^2 +bx +c\) è una curva detta <b>parabola</b>.
+
+        <br>
+
+
+        <br>
+        <div class="grayBorder">
+            Vediamo come varia il grafico
+            <br>
+            <br>
+            <ul>
+                <li>
+                    in funzione del coefficiente \(\color{blue}{a}\);
+                </li>
+                <br>
+                <li>
+                    in funzione delle soluzioni \(\color{red}{s_{1}}\) ed \(\color{rgb(0, 153, 0)}{s_{2}}\)
+                    dell'equazione associata al polinomio
+                </li>
+            </ul>
+            <br>
+            <br>
+            <div class="geogebra-container">
+                <div id="geogebra2"></div>
+            </div>
+            <br>
+            <span class="gray">
+                Provate a variare \(\color{blue}{a}\), \(\color{red}{s_{1}}\) ed \(\color{rgb(0, 153, 0)}{s_{2}}\)
+                tramite gli slider ed osservate come cambia la figura.
+            </span>
+        </div>
+
+        <br>
+        <br>
+        Riassumendo:
+        <br>
+        <br>
+
+        <div class="grayBackground">
+            Per disegnare la parabola associata ad un polinomio di secondo grado
+            \[
+            ax^2 + bx + c
+            \]
+            <br>
+            <ul>
+                <li>
+                    risolviamo l'equazione associata \(ax^2 + bx + c = 0\), ottenendo le soluzioni
+                    \(\color{red}{s_{1}}\) ed \(\color{rgb(0, 153, 0)}{s_{2}}\).
+                    <br>
+                    Queste indicano le ascisse dei punti di intersezione della parabola con l'asse delle \(x\);
+                </li>
+                <br>
+                <li>
+                    osserviamo il segno del coefficiente \(\color{blue}{a}\).
+                    <br>
+                    <ul>
+                        <li>
+                            se \(\color{blue}{a} \color{black}{} \gt 0\) allora la concavità della parabola è verso
+                            l'alto;
+                            <br>
+                            <br>
+                            <div style="width: 50%;">
+                                <img src="img/parabolaSorride.png" alt=""
+                                    style="display: block; width: 100%; margin: auto;">
+                            </div>
+                        </li>
+                        <br>
+                        <li>
+                            se \(\color{blue}{a}\color{black}{} \lt 0\) allora la concavità della parabola è verso il
+                            basso;
+                            <br>
+                            <br>
+                            <div style="width: 50%;">
+                                <img src="img/parabolaTriste.png" alt=""
+                                    style="display: block; width: 100%; margin: auto;">
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <br>
+        <br>
+        <br>
+
+
+        <b style="font-size: 1.3rem;">Esempi</b>
+        <div class="grayBorder">
+            <b>Esempio 1</b>
+            <br>
+            <p>
+                Rappresentare graficamente il polinomio
+                \[
+                2x^2 +2x -4
+                \]
+            </p>
+            <br>
+            <ul>
+                <li>
+                    <p>
+                        Risolviamo l'equazione associata \(2x^2 +2x -4 = 0\):
+                    </p>
+                    <br>
+                    <p class="formula">
+                        \(
+
+                        x = \dfrac{-2 \pm \sqrt{2^2 -4 \cdot 2 \cdot \left(-4\right)}}{2 \cdot 2} =
+                        \)
+                    </p>
+                    <br>
+                    <p class="formula">
+                        \(
+                        = \dfrac{-2 \pm \sqrt{4 +32}}{4} = \dfrac{-2 \pm \sqrt{36}}{4} =
+                        \)
+                    </p>
+                    <br>
+                    <p class="formula">
+                        \(
+                        = \dfrac{-2 \pm 6}{4}
+                        \)
+                    </p>
+                    <br>
+                    <p class="formula">
+                        \(
+                        x = \color{red}{-2} \color{black}{} \quad\text{oppure}\quad x = \color{rgb(0, 153, 0)}{1}
+                        \)
+                    </p>
+                    <br>
+                    <p>
+                        Di conseguenza la parabola interseca l'asse delle \(x\) in corrispondenza di \(x =
+                        \color{red}{-2}\) e \(x = \color{rgb(0, 153, 0)}{1}\)
+                    </p>
+                </li>
+                <br>
+                <li>
+                    <p>
+                        Guardiamo il polinomio
+                        \[
+                        \color{blue}{2}\,\color{black}{}x^2 +2x -4
+                        \]
+                    </p>
+                    <p>
+                        Il coefficiente \(\color{blue}{a}\) ha valore \(\color{blue}{2}\), dunque ha segno positivo. Di
+                        conseguenza la parabola ha la concavità verso l'alto.
+                    </p>
+                    <p>
+                        Abbiamo tutti gli elementi per disegnare la parabola:
+                    </p>
+                    <br>
+
+                    <img src="img/esempioParabolaSorridente.png" alt="" style="width: 70%; border: 0;">
+                </li>
+            </ul>
+
+            <br>
+            <br>
+            <hr>
+            <br>
+            <br>
+
+            <b>Esempio 2</b>
+            <br>
+            <p>
+                Rappresentare graficamente il polinomio
+                \[
+                -x^2 +x +6
+                \]
+            </p>
+            <br>
+            <ul>
+                <li>
+                    <p>
+                        Risolviamo l'equazione associata \(-x^2 +x +6 = 0\):
+                    </p>
+                    <br>
+                    <p class="formula">
+                        \(
+
+                        x = \dfrac{-1 \pm \sqrt{1^2 -4 \cdot \left(-1\right) \cdot 6}}{2 \cdot \left(-1\right)} =
+                        \)
+                    </p>
+                    <br>
+                    <p class="formula">
+                        \(
+                        = \dfrac{-1 \pm \sqrt{1 + 24}}{-2} = \dfrac{-1 \pm \sqrt{25}}{-2} =
+                        \)
+                    </p>
+                    <br>
+                    <p class="formula">
+                        \(
+                        = \dfrac{-1 \pm 5}{-2}
+                        \)
+                    </p>
+                    <br>
+                    <p class="formula">
+                        \(
+                        x = \color{red}{-2} \color{black}{} \quad\text{oppure}\quad x = \color{rgb(0, 153, 0)}{3}
+                        \)
+                    </p>
+                    <br>
+                    <p>
+                        Di conseguenza la parabola interseca l'asse delle \(x\) in corrispondenza di \(x =
+                        \color{red}{-2}\) e \(x = \color{rgb(0, 153, 0)}{3}\)
+                    </p>
+                </li>
+                <br>
+                <li>
+                    <p>
+                        Guardiamo il polinomio
+                        \[
+                        \color{blue}{-}\,\color{black}{}x^2 +x +6
+                        \]
+                    </p>
+                    <p>
+                        Il coefficiente \(\color{blue}{a}\) ha valore \(\color{blue}{-1}\), dunque ha segno negativo. Di
+                        conseguenza la parabola ha la concavità verso il basso.
+                    </p>
+                    <p>
+                        Abbiamo tutti gli elementi per disegnare la parabola:
+                    </p>
+                    <br>
+
+                    <img src="img/esempioParabolaTriste.png" alt="" style="width: 70%; border: 0;">
+                </li>
+            </ul>
+        </div>
+
+        <script>
+            var ggbApp2 = new GGBApplet({
+                "appName": "classic",
+                "id": "gg2",
+                "showToolBar": false,
+                "showAlgebraInput": false,
+                "showMenuBar": false,
+                "enableShiftDragZoom": false,
+                "scaleContainerClass": "geogebra-container",
+                "filename": "img/polinomiSecondoGradoEParabola.ggb"
+            }, true);
+
+            window.addEventListener("load", function () {
+                ggbApp2.inject('geogebra2');
+            });
+        </script>
+    </div>
+
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+
+    <h3 class="green">Esercizio</h3>
+    <br>
+    <div>
+        Studiare il segno del polinomio
+        \[
+        2x^2 -x -6
+        \]
+        al variare del valore della \(x\).
+
+        <br>
+        <br>
+
+        <button id="hintAAAAAAA(1)-button" onclick="showHint(`AAAAAAA(1)`)">Soluzione</button>
+        <div id="hintAAAAAAA(1)" class="hint gray" style="display: none;">
+            <b class="gray">Soluzione</b>
+            <br>
+            <br>
+            \(2x^2 -x -6 \gt 0\,\,\) se \(\,\,x \lt -\dfrac{3}{2}\,\,\) oppure \(\,\, x \gt 2\)
+            <br>
+            <br>
+            \(2x^2 -x -6 \lt 0\,\,\) se \(\,\, -\dfrac{3}{2} \lt x \lt 2\)
+            <br>
+            <br>
+            \(2x^2 -x -6 = 0\,\,\) se \(\,\,x = -\dfrac{3}{2}\) oppure \(x = 2\)
+        </div>
+        
+        <br>
+
+        <button id="hintAAAAAAA(2)-button" onclick="showHint(`AAAAAAA(2)`)">Svolgimento</button>
+        <div id="hintAAAAAAA(2)" class="hint gray" style="display: none;">
+            <b class="gray">Svolgimento</b>
+            <br>
+            <iframe style="width: 100%;" src="https://www.youtube.com/embed/jvoBATCMCQI?si=s8I3UvYq2wahYLUs"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+
+
+
+
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+
+    <h3 class="green">Esercizio</h3>
+    <br>
+    <div>
+        Studiare il segno del polinomio
+        \[
+        -x^2 -10x -21
+        \]
+        al variare del valore della \(x\).
+
+        <br>
+        <br>
+
+        <button id="hintAAAAAAA(3)-button" onclick="showHint(`AAAAAAA(3)`)">Soluzione</button>
+        <div id="hintAAAAAAA(3)" class="hint gray" style="display: none;">
+            <b class="gray">Soluzione</b>
+            <br>
+            <br>
+            \(-x^2 -10x -21 \gt 0\,\,\) se \(\,\, -7 \lt x \lt -3\)
+            <br>
+            <br>
+            \(-x^2 -10x -21 \lt 0\,\,\) se \(\,\,x \lt -7\,\,\) oppure \(\,\,x \gt -3\)
+            <br>
+            <br>
+            \(-x^2 -10x -21 = 0\,\,\) se \(\,\,x = -7\,\,\) oppure \(\,\,x = -3\)
+        </div>
+
+    </div>
+
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+
+    <h3 class="green">Esercizio</h3>
+    <br>
+    <div>
+        Studiare il segno del polinomio
+        \[
+        3x^2 + 7
+        \]
+        al variare del valore della \(x\).
+
+        <br>
+        <br>
+
+        <button id="hintAAAAAAA(4)-button" onclick="showHint(`AAAAAAA(4)`)">Soluzione</button>
+        <div id="hintAAAAAAA(4)" class="hint gray" style="display: none;">
+            <b class="gray">Soluzione</b>
+            <br>
+            Il polinomio assume segno positivo per ogni valore assunto dalla \(x\).
+        </div>
+
+    </div>
+
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+
+    <h3 class="green">Esercizio</h3>
+    <br>
+    <div>
+        Studiare il segno del polinomio
+        \[
+        9x^2 -4
+        \]
+        al variare del valore della \(x\).
+
+        <br>
+        <br>
+
+        <button id="hintAAAAAAA(5)-button" onclick="showHint(`AAAAAAA(5)`)">Soluzione</button>
+        <div id="hintAAAAAAA(5)" class="hint gray" style="display: none;">
+            <b class="gray">Soluzione</b>
+            <br>
+            <br>
+            \(9x^2 -4 \gt 0\,\,\) se \(\,\,x \lt -\dfrac{3}{2}\,\,\) oppure \(x \gt \dfrac{3}{2}\)
+            <br>
+            <br>
+            \(9x^2 -4 \lt 0\,\,\) se \(\,\, -\dfrac{3}{2} \lt x\lt \dfrac{3}{2}\)
+            <br>
+            <br>
+            \(9x^2 -4 = 0\,\,\) se \(\,\,x = -\dfrac{3}{2}\) oppure \(\,\,x = \dfrac{3}{2}\)
+        </div>
+
+    </div>
+
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+
+    <h3 class="green">Esercizio</h3>
+    <br>
+    <div>
+        Risolvere la seguente disequazione
+        \[
+        \dfrac{3}{2}\left(3 -\dfrac{1}{6}x\right) - \dfrac{x + 1}{10} \leq 1
+        \]
+
+        <br>        
+
+        <button id="hintAAAAAAA(6)-button" onclick="showHint(`AAAAAAA(6)`)">Soluzione</button>
+        <div id="hintAAAAAAA(6)" class="hint gray" style="display: none;">
+            <b class="gray">Soluzione</b>
+            La disequazione è risolta per \(x \geq \dfrac{68}{7}\).
+        </div>
+
+
+    </div>
+    
+
+    <br>
+    <br>
+
+    <script src="../../js/hintAndSlide.js"></script>
+
+</body>
