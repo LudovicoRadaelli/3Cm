@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script language="javascript" type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.min.js">
+    </script>
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>Compiti per casa</title>
+</head>
+
+<body>
+    <h1>Compiti per casa</h1>
+
+    <br>
+
+    <h3 class="yellow">Sistemi di disequazioni</h3>
+    <div class="esempi-container">
+
+        Consideriamo la disequazione
+        \[
+        x^2 - 3x + 2 \geq 0
+        \]
+        e la disequazione
+        \[
+        5x + 5 \gt 0
+        \]
+        Sappiamo risolverle entrambe. La prima è una disequazione di secondo grado e la affrontiamo
+        attraverso il metodo della parabola; la seconda è una disequazione lineare, si risolve isolando la \(x\).
+        <br>
+        <br>
+        In questo capitolo ci poniamo la seguente domanda:
+
+        <br>
+        <br>
+        <div class="grayBorder">
+            Esistono dei valori che assegnati alla \(x\) soddisfano <b>entrambe</b> le disequazioni?
+        </div>
+        <br>
+
+        Per indicare che stiamo cercando le <b>soluzioni comuni</b> delle due
+        disequazioni, useremo il seguente linguaggio simbolico:
+        \[
+        \begin{cases}
+        x^2 - 3x + 2 \geq 0
+        \\\\
+        5x + 5 \gt 0
+        \end{cases}
+        \]
+
+        Nei prossimi video è illustrato il <b>metodo del grafico di intersezione</b>, che permette di risolvere i
+        sistemi di
+        disequazioni.
+        <br>
+        <br>
+        <iframe style="width: 100%;" src="https://www.youtube.com/embed/LwDtdbxs-Xg?si=tDLb0R_ai3gSERui"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        <br>
+        <br>
+        <iframe style="width: 100%;" src="https://www.youtube.com/embed/LwDtdbxs-Xg?si=w3ejcd5vZzuN0-dv"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+    </div>
+
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+
+    <h3 class="green">Esercizio</h3>
+    <br>
+    <div>
+        Risolvere il seguente sistema di disequazioni
+        \[
+        \begin{cases}
+        4x - 2x \left(-x + 1\right) \geq \dfrac{1}{3}\left(5x - 6\right)
+        \\\\
+        5x -\dfrac{2}{5}\left(2x - 10\right) \leq \dfrac{1}{2}
+        \end{cases}
+        \]
+
+        <br>
+
+        <button id="hintAAAAAAA(1)-button" onclick="showHint(`AAAAAAA(1)`)">Soluzione</button>
+        <div id="hintAAAAAAA(1)" class="hint gray" style="display: none;">
+            <b class="gray">Soluzione</b> \(\,\,x \leq -\dfrac{5}{6}\)
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+
+    <h3 class="green">Esercizio</h3>
+    <br>
+    <div>
+        \[
+        \begin{cases}
+        \dfrac{2x}{-x - 2} \geq 1
+        \\\\
+        \dfrac{6x - 1}{-5x + 2} \leq 0
+        \end{cases}
+        \]
+
+        <br>
+
+        <b class="gray">Suggerimento</b>
+        <br>
+        <div class="gray">
+
+            Nella seconda disequazione ci viene chiesto di studiare quando la frazione
+            \[
+            \dfrac{6x - 1}{-5x + 2} \leq 0
+            \]
+            assume segno positivo. Sappiamo come fare: studiamo il segno del numeratore, quello del
+            denomintore e facciamo il grafico dei segni.
+            <br>
+            <br>
+            Nella prima disequazione invece ci viene chiesto di individuare per quali valori di
+            \(x\) la frazione \(\dfrac{2x}{-x - 2}\) assume valore <span style="color: red;">maggiore o uguale ad \(1\)</span>
+            \[
+            \dfrac{2x}{-x - 2} \color{red}{}\geq 1
+            \]
+            Trasformiamo questa domanda in uno studio del segno. In altre parole vogliamo che a destra della
+            diseguaglianza ci sia \(0\), non \(1\).
+            \[
+            \begin{align*}
+            \dfrac{2x}{-x - 2} &\geq 1
+            \\\\
+            \dfrac{2x}{-x - 2} - 1 &\geq 0
+            \\\\
+            \dfrac{2x -(-x - 2)}{-x -2} &\geq 0
+            \\\\
+            \dfrac{2x +x + 2}{-x -2} &\geq 0
+            \\\\
+            \dfrac{3x + 2}{-x -2} &\geq 0
+            \end{align*}
+            \]
+            Da qua in poi sapete come procedere: studiamo il segno del numeratore e del denominatore e
+            rappresentiamo il grafico dei segni.
+        </div>
+
+        <br>
+
+        <button id="hintAAAAAAA(2)-button" onclick="showHint(`AAAAAAA(2)`)">Soluzione</button>
+        <div id="hintAAAAAAA(2)" class="hint gray" style="display: none;">
+            <b>Soluzione:</b>
+            <br>
+            <br>
+            \(-2 \lt x \leq -\dfrac{2}{3}\)
+        </div>
+    </div>    
+
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+
+    <h3 class="green">Esercizio</h3>
+    <br>
+    <div>
+        \[
+        \begin{cases}
+        (x - 1)(x - 2)(x - 3) \leq 0
+        \\\\
+        \dfrac{2}{3}\left(\dfrac{5}{2}x + 2\right) - \dfrac{x + 1}{2} \leq 0
+        \end{cases}
+        \]
+
+        <br>
+
+        <button id="hintAAAAAAA(3)-button" onclick="showHint(`AAAAAAA(3)`)">Soluzione</button>
+        <div id="hintAAAAAAA(3)" class="hint gray" style="display: none;">
+            <b>Soluzione:</b> \(\,\,x \leq -\dfrac{5}{7}\)
+        </div>
+    </div>    
+
+    <br>
+    <br>
+
+    <script src="../../js/hintAndSlide.js"></script>
+
+</body>
