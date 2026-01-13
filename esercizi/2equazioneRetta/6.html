@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script language="javascript" type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.min.js"></script>
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>Compiti per casa</title>
+</head>
+
+<body>
+    <h1>Compiti per casa</h1>
+
+    <br>
+
+    <h3 class="yellow">Equazione di una retta passante per due punti</h3>
+    <div class="esempi-container">
+        
+        <iframe style="width: 100%;" src="https://www.youtube.com/embed/jrG9Yp_EX1A?si=Y3vv9Z6pEPmVjj1b" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+        <br>
+        <br>
+
+        Riassumendo 
+
+        <br>
+
+        <div class="grayBackground">
+            Dati i punti \(A(x_{_A}\,,\,\,y_{_A})\) e \(B(x_{_B}\,,\,\,y_{_B})\), per trovare la retta 
+            \(r\) passante per \(A\) e \(B\)
+            <br>
+            <br>
+            <ul>
+                <li>
+                    troviamo il coefficiente angolare attraverso la formula
+                    \[
+                        m = \dfrac{y_{_B} - y_{_A}}{x_{_B} - x_{_A}}
+                    \]
+                </li>                
+                <li>
+                    Troviamo il termine noto sostituendo le coordinate di uno dei due punti, ad esempio \(A\), 
+                    nell'equazione della retta.
+                    \[
+                        y_{_A} = m x_{_A} + q
+                    \]
+                    e risolvendo l'equazione rispetto all'incognita \(q\).                    
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <h3 class="green">Esercizio</h3>
+    <br>
+    <div>
+        Consideriamo i punti \(A(-2\,,\,\,7)\,\,\,\) e \(\,\,\,B(3\,,\,\,\,2)\).
+        <br>
+        Scrivere l'equazione della retta \(r\) passante per i punti \(A\) e \(B\).        
+
+        <br>
+        <br>
+
+        <button id="hintAAAAAAA(1)-button" onclick="showHint(`AAAAAAA(1)`)">Soluzione</button>
+        <div id="hintAAAAAAA(1)" class="hint gray" style="display: none;">     
+            <b class="gray">Soluzione</b> 
+            <br>
+            La retta \(r\) passante per \(A\) e \(B\) ha equazione 
+            \[y = -x + 5\]
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+
+    <h3 class="green">Esercizio</h3>
+    <br>
+    <div>
+        Consideriamo i punti \(A\left(5\,,\,\,-1\right)\,\,\,\) e \(\,\,\,B\left(-2\,,\,\,\,13\right)\).
+        <br>
+        Scrivere l'equazione della retta \(r\) passante per i punti \(A\) e \(B\).        
+
+        <br>
+        <br>
+
+        <button id="hintAAAAAAA(4)-button" onclick="showHint(`AAAAAAA(4)`)">Soluzione</button>
+        <div id="hintAAAAAAA(4)" class="hint gray" style="display: none;">     
+            <b class="gray">Soluzione</b> 
+            <br>
+            La retta \(r\) passante per \(A\) e \(B\) ha equazione  
+            \[ y = -2x + 9\]
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+
+    <h3 class="green">Esercizio</h3>
+    <br>
+    <div>
+        Consideriamo i punti \(A(1\,,\,\,-2)\), \(\,\,\,B(5\,,\,\,\,-3)\),\(\,\,\,C(1\,,\,\,-2)\).                
+        Stabilire se \(A\), \(B\) e \(C\) sono allineati.
+        <br>
+        <br>
+
+        <button id="hintAAAAAAA(3)-button" onclick="showHint(`AAAAAAA(3)`)">Soluzione</button>
+        <div id="hintAAAAAAA(3)" class="hint gray" style="display: none;">     
+            <b class="gray">Soluzione</b> 
+            <br>
+            La retta \(r\) passante per \(A\) e \(B\) ha equazione 
+            \[y = -\dfrac{1}{4}x - \dfrac{7}{4}\]
+            Per controllare se il punto \(C\) appartiene alla retta \(r\) sostituiamo le 
+            sue coordinate nell'equazione di \(r\). Si vede in questo modo che \(C\) appartiene ad \(r\), 
+            quindi i punti sono allineati.
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+
+    <h3 class="green">Esercizio</h3>
+    <br>
+    <div>
+        Scrivere l'equazione della retta rappresentata in grafico
+        <br>
+        <br>
+        <img src="img/6(1).png" alt="">
+        
+        <br>
+        <br>
+
+        <div class="gray">
+            <b>Suggerimento</b>
+            <br>
+            Il termine noto non riusciamo a stabilirlo a partire dal grafico, perché l'intersezione
+            tra la retta e l'asse delle \(y\) non cade sulla "griglia". Ma non ci sono problemi, ormai sappiamo 
+            come trovarla anche senza ricorrere al grafico... pensate agli esercizi precedenti!
+        </div>
+
+        <br>
+        <br>
+
+        <button id="hintAAAAAAA(5)-button" onclick="showHint(`AAAAAAA(5)`)">Soluzione</button>
+        <div id="hintAAAAAAA(5)" class="hint gray" style="display: none;">     
+            <b class="gray">Soluzione</b> 
+            <br>
+            La retta ha equazione 
+            \[
+                y=\frac{3}{4}x+\frac{13}{4}
+            \]
+        </div>
+    </div>
+
+    <br>
+    <br>
+    
+
+    <script src="../../js/hintAndSlide.js"></script>
+
+    <br>
+    <br>
+
+
+</body>
