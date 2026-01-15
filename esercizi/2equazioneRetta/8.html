@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+    <script language="javascript" type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.min.js"></script>
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>Compiti per casa</title>
+</head>
+<style>
+    .equation-container,
+    .m-container,
+    .q-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-bottom: 0.7rem;
+    }
+
+    #m1,
+    #m2,
+    #q1,
+    #q2 {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .minus {
+        margin-left: 0.4rem;
+        margin-right: 0.1rem;
+    }
+
+    .plus {
+        margin-left: 0.1rem;
+    }
+</style>
+
+<body>
+    <h1>Compiti per casa</h1>
+
+    <br>
+    <h3 class="yellow">Rette perpendicolari</h3>
+    <div class="esempi-container">
+        <p>
+            Date due rette incidenti, esse determinano un certo angolo.
+            <br>
+            Ad esempio le rette della figura interattiva
+            sottostante formano un angolo di \(97.13°\).
+            <br>
+            <br>
+            Quando le rette sono disposte in modo da formare un angolo di \(90°\), si dicono <b>perpendicolari</b> tra
+            loro.
+        </p>
+
+        <br>
+
+
+        <div class="grayBorder">
+
+            <div class="geogebra-container">
+                <div id="geogebra1"></div>
+            </div>
+            <p class="gray" style="font-size: 0.9rem;">
+                Tramite i tasti è possibile cambiare il valore del coefficiente angolare e termine noto di ciascuna
+                retta.
+            </p>
+
+            <br>
+
+            <div class="input-container ">
+
+                <div class="equation-container">
+                    <div id="equation1">
+                        \[
+                        \color{red}{}y = 5x + 1
+                        \]
+                    </div>
+                    <div id="equation2">
+                        \[
+                        \color{blue}{}y = -\dfrac{1}{3}x +4
+                        \]
+                    </div>
+                </div>
+
+                <div class="m-container">
+                    <div id="m1">
+                        <div>\(\color{red}{}m\): </div>
+                        <button class="minus" onclick="changeM(1, -1)">\(-\)</button>
+                        <button class="plus" onclick="changeM(1, 1)">\(+\)</button>
+                    </div>
+                    <div id="m2">
+                        <div>\(\color{blue}{}m\): </div>
+                        <button class="minus" onclick="changeM(2, -1)">\(-\)</button>
+                        <button class="plus" onclick="changeM(2, 1)">\(+\)</button>
+                    </div>
+                </div>
+
+                <div class="q-container">
+                    <div id="q1">
+                        <div>\(\color{red}{}q\):</div>
+                        <button class="minus" onclick="changeQ(1, -1)">\(-\)</button>
+                        <button class="plus" onclick="changeQ(1, 1)">\(+\)</button>
+                    </div>
+                    <div id="q2">
+                        <div>\(\color{blue}{}q\):</div>
+                        <button class="minus" onclick="changeQ(2, -1)">\(-\)</button>
+                        <button class="plus" onclick="changeQ(2, 1)">\(+\)</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+
+        <ul>
+            <li>
+                Come varia l'angolo formato dalle due rette se modificate il termine noto \(\color{red}{q}\) della retta
+                rossa?
+                <br>
+                <br>
+                E se modificate il termine noto \(\color{blue}{q}\) della retta blu?
+            </li>
+            <br>
+            <li>
+                <nobr>Modificate \(\color{red}{m}\) della retta rossa portandolo a \(13\).</nobr>
+                <br>
+                <br>
+                Che valore deve assumere \(\color{blue}{m}\) dell retta blu perché le rette formino un angolo di
+                \(90°\)?
+            </li>
+            <br>
+            <li>
+                <nobr>
+                    Modificate \(\color{red}{m}\) della retta rossa portandolo a \(-2\).
+                </nobr>
+                <br>
+                <br>
+                Che valore deve assumere \(\color{blue}{m}\) dell retta blu perché le rette formino un angolo di
+                \(90°\)?
+            </li>
+
+        </ul>
+
+
+
+        <br>
+        <div class="grayBackground" style="text-align: center;">
+            Due rette di equazione
+            \[
+            y= m_{1}\,x + q_{1} \quad\text{e}\quad y= m_{2}\,x + q_{2}
+            \]
+            sono perpendicolari
+            \[
+            \Updownarrow
+            \]
+            \[
+            m_{1} \cdot m_{2} = -1
+            \]
+        </div>
+
+        <br>
+
+        <b class="gray">Esempio</b>
+        <br>
+        <div class="grayBorder">
+            Le rette di equazioni
+            \[
+            y= \color{red}{5}\color{black}{}\,x + 7 \quad\text{e}\quad y= \color{blue}{-\dfrac{1}{5}}\color{black}{}\,x
+            + 2
+            \]
+            sono parallele poiché
+            \[
+            \color{red}{}5\color{black}{} \cdot \left(\color{blue}{}-\dfrac{1}{5}\color{black}{}\right) = -1
+            \]
+        </div>
+
+        <br>
+
+
+
+        <b class="gray">Esempio</b>
+        <br>
+        <div class="grayBorder">
+            Le rette di equazioni
+            \[
+            y= \color{red}{}-\dfrac{4}{9}\color{black}{}\,x -3 \quad\text{e}\quad y=
+            \color{blue}{}\dfrac{9}{4}\color{black}{}\,x + 1
+            \]
+            sono parallele poiché
+            \[
+            \color{red}{}-\dfrac{4}{9}\color{black}{} \cdot \color{blue}{}\dfrac{9}{4}\color{black}{} = -1
+            \]
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+
+    <script src="../../js/hintAndSlide.js"></script>
+    <script>
+        var ggbApp1 = new GGBApplet({
+            "appName": "classic",
+            "id": "gg1",
+            "width": 320,
+            "height": 300,
+            "scaleContainerClass": "geogebra-container",
+            "showToolBar": false,
+            "showAlgebraInput": false,
+            "showMenuBar": false,
+            "enableShiftDragZoom": false,
+            "material_id": "pukjyr75"
+        }, true);
+
+        window.addEventListener("load", function () {
+            ggbApp1.inject('geogebra1');
+        });
+
+        function changeM(i, delta) {
+
+            if (i === 1) {
+                let a = gg1.getValue("a");
+                let q = gg1.getValue("q");
+                a += delta;
+                if (a >= 1 && a <= 15) {
+                    gg1.setValue("a", a);
+
+                    if (q >= 0) {
+                        document.getElementById("equation" + i).innerHTML =
+                            `\\[\\color{red}{}y = ${a}x + ${q} \\]`;
+                    } else {
+                        document.getElementById("equation" + i).innerHTML =
+                            `\\[\\color{red}{}y = ${a}x ${q} \\]`;
+                    }
+                    MathJax.typesetClear([document.getElementById("equation" + i)]);
+                    MathJax.typesetPromise([document.getElementById("equation" + i)]).then(() => { });
+                }
+
+
+            }
+
+            if (i === 2) {
+                let b = gg1.getValue("b");
+                b += delta;
+                let k = gg1.getValue("k");
+                if (b >= 1 && b <= 15) {
+                    gg1.setValue("b", b);
+
+                    if (k >= 0) {
+                        document.getElementById("equation" + i).innerHTML =
+                            `\\[\\color{blue}{}y = -\\dfrac{1}{${b}}x + ${k} \\]`;
+                    } else {
+                        document.getElementById("equation" + i).innerHTML =
+                            `\\[\\color{blue}{}y = -\\dfrac{1}{${b}}x ${k} \\]`;
+                    }
+
+                    MathJax.typesetClear([document.getElementById("equation" + i)]);
+                    MathJax.typesetPromise([document.getElementById("equation" + i)]).then(() => { });
+                }
+
+            }
+        }
+
+        function changeQ(i, delta) {
+            if (i === 1) {
+                let a = gg1.getValue("a");
+                let q = gg1.getValue("q");
+                q += delta;
+                if (q >= -12 && q <= 12) {
+                    gg1.setValue("q", q);
+
+                    if (q >= 0) {
+                        document.getElementById("equation" + i).innerHTML =
+                            `\\[\\color{red}{}y = ${a}x + ${q} \\]`;
+                    } else {
+                        document.getElementById("equation" + i).innerHTML =
+                            `\\[\\color{red}{}y = ${a}x ${q} \\]`;
+                    }
+
+                    MathJax.typesetClear([document.getElementById("equation" + i)]);
+                    MathJax.typesetPromise([document.getElementById("equation" + i)]).then(() => { });
+                }
+            }
+
+            if (i === 2) {
+                let b = gg1.getValue("b");
+                let k = gg1.getValue("k");
+                k += delta;
+                if (k >= -12 && k <= 12) {
+                    gg1.setValue("k", k);
+
+                    document.getElementById("equation" + i).innerHTML =
+                        `\\[\\color{blue}{}y = -\\dfrac{1}{${b}}x + ${k} \\]`;
+                    MathJax.typesetClear([document.getElementById("equation" + i)]);
+                    MathJax.typesetPromise([document.getElementById("equation" + i)]).then(() => { });
+                }
+            }
+        }
+
+        /* MathJax.typesetClear([]);
+        MathJax.typesetPromise([]).then(() => {}); */
+
+
+
+        function mostraPassaggi() {
+            document.getElementById("mostraPassaggi").style.display = "none";
+            document.getElementById("passaggi").style.display = "block";
+            document.getElementById("nascondiPassaggi").style.display = "block";
+        }
+
+        function nascondiPassaggi() {
+            document.getElementById("mostraPassaggi").style.display = "block";
+            document.getElementById("passaggi").style.display = "none";
+            document.getElementById("nascondiPassaggi").style.display = "none";
+        }
+
+
+    </script>
+
+    <br>
+    <br>
+
+    <h3 class="green">Esercizio</h3>
+    <br>
+    <div>
+        Stabilire quali tra le seguenti retta sono <b>perpendicolari</b> tra loro:
+        \[
+        \begin{align*}
+        r_1&:\quad y = 3x - 1
+        \\\\
+        r_2&:\quad y = -3x + 10
+        \\\\
+        r_3&:\quad y = \dfrac{1}{3}x - 4
+        \\\\
+        r_4&:\quad 9y + 2x - 1 = 0
+        \\\\
+        r_5&:\quad 2y - 9x - 7 = 0
+        \\\\
+        r_6&:\quad 3y + 9x + 23 = 0
+        \end{align*}
+        \]
+
+        <br>
+
+        <button id="hintAAAAAAA(1)-button" onclick="showHint(`AAAAAAA(1)`)">Soluzione</button>
+        <div id="hintAAAAAAA(1)" class="hint gray" style="display: none;">
+            <b class="gray">Soluzione</b>
+            <br>
+            Le uniche rette perpendicolari tra loro sono \(r_{4}\) ed \(r_{5}\).
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+
+   <h3 class="green">Esercizio</h3>
+    <br>
+    <div>
+        Scrivere l'equazione della retta \(r\) passante per il punto \(P(1\,,\,\,-3)\) e perpendicolare
+        alla retta di equazione
+        \[
+        6x - 5y + 3 = 0
+        \]
+
+        <br>
+
+        <button id="hintAAAAAAA(2)-button" onclick="showHint(`AAAAAAA(2)`)">Soluzione</button>
+        <div id="hintAAAAAAA(2)" class="hint gray" style="display: none;">
+            <b class="gray">Soluzione</b>
+            <br>
+            L'equazione della retta \(r\) è \(5x + 6y + 13 = 0\).
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+
+
+    <h3 class="green">Esercizio</h3>
+    <br>
+    <div>
+        Sia \(r\) la retta passante per i punti \(A(-1\,,\,\,4)\) e \(B(3\,,\,\,-4)\).
+        Stabilire l'equazione della retta \(s\) perpendicolare ad \(r\) e passante per il punto \(P(2\,,\,\,-3)\).
+
+        <br>
+        <br>
+
+        <button id="hintAAAAAAA(3)-button" onclick="showHint(`AAAAAAA(3)`)">Soluzione</button>
+        <div id="hintAAAAAAA(3)" class="hint gray" style="display: none;">
+            <b class="gray">Soluzione</b>
+            <br>
+            L'equazione della retta \(s) è \( x - 2y - 8 = 0\).
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+
+    <h3 class="green">Esercizio</h3>
+    <br>
+    <div>
+        Stabilire se la retta \(r\) passante per i punti \(A(-2\,,\,\,-3)\) e \(B(1\,,\,\,0)\)
+        è perpendicolare alla retta \(s\) passante per i punti \(C(5\,,\,\,2)\) e \((6\,,\,\,1)\)
+
+        <br>
+        <br>
+
+        <button id="hintAAAAAAAAAA(4)-button" onclick="showHint(`AAAAAAAAAA(4)`)">Soluzione</button>
+        <div id="hintAAAAAAAAAA(4)" class="hint gray" style="display: none;">     
+            <b class="gray">Soluzione</b> 
+            <br>
+            Le rette sono tra loro perpendicolari.
+        </div>
+    </div>
+
+
+
+</body>
