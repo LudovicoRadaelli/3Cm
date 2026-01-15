@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script language="javascript" type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.min.js"></script>
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>Compiti per casa</title>
+</head>
+
+<body>
+    <h1>Compiti per casa</h1>
+
+    <br>
+
+    <h3 class="yellow">Equazione implicita della retta</h3>
+    <div class="esempi-container">
+        Finora abbiamo studiato l'equazione <b>esplicita</b> della retta, che in
+        generale ha forma
+        \[
+        y = mx + q
+        \]
+        In questo paragrafo vediamo l'equazione <b>implicita</b> della retta, che ha forma
+        \[
+        ax + by + c = 0
+        \]
+        Vediamo un esempio concreto.
+
+        <br>
+        <br>
+
+        <b class="gray">Esempio</b>
+        <br>
+        <div class="grayBorder">
+            Consideriamo la retta di equazione implicita
+            \[
+            -10x + 5y + 1 = 0
+            \]
+            <div id="slide-containerImPliCiTa1" class="slide-container ImPliCiTa1 grayBorder">
+                <div class="slideImPliCiTa1">
+                    Isoliamo la \(y\).
+                    \[
+                    -10x + 5y + 1 = 0
+                    \]
+                </div>
+                <div class="slideImPliCiTa1">
+                    Isoliamo la \(y\).
+                    \[
+                    \color{blue}{}-10x\color{black}{} + 5y \color{blue}{}+ 1\color{black}{} = 0
+                    \]
+                </div>
+                <div class="slideImPliCiTa1">
+                    Isoliamo la \(y\).
+                    \[
+                    5y = \color{blue}{}10x\color{black}{} \color{blue}{}- 1\color{black}{}
+                    \]
+                </div>
+                <div class="slideImPliCiTa1">
+                    Isoliamo la \(y\).
+                    \[
+                    5y = 10x - 1
+                    \]
+                </div>
+                <div class="slideImPliCiTa1">
+                    Isoliamo la \(y\).
+                    \[
+                    \dfrac{5y}{\color{blue}{5}} = \dfrac{10x - 1}{\color{blue}{5}}
+                    \]
+                </div>
+                <div class="slideImPliCiTa1">
+                    Isoliamo la \(y\).
+                    \[
+                    \dfrac{\cancel{5}y}{\cancel{5}} = \dfrac{10x - 1}{\color{blue}{5}}
+                    \]
+                </div>
+                <div class="slideImPliCiTa1">
+                    Isoliamo la \(y\).
+                    \[
+                    y = \dfrac{10x - 1}{\color{blue}{5}}
+                    \]
+                </div>
+                <div class="slideImPliCiTa1">
+                    Isoliamo la \(y\).
+                    \[
+                    y = \dfrac{10x}{\color{blue}{5}} - \dfrac{1}{\color{blue}{5}}
+                    \]
+                </div>
+                <div class="slideImPliCiTa1">
+                    Isoliamo la \(y\).
+                    \[
+                    y = 2x - \dfrac{1}{5}
+                    \]
+                </div>
+            </div>
+            <div style="display: flex; flex-direction:row; justify-content: space-evenly; align-items: center;">
+                <button id="previousSlide-buttonImPliCiTa1" onclick="previousSlide(`ImPliCiTa1`)">Indietro</button>
+                <button onclick="toggleFullscreen('ImPliCiTa1')">⛶</button>
+                <button id="nextSlide-buttonImPliCiTa1" onclick="nextSlide(`ImPliCiTa1`)">Avanti</button>
+            </div>
+            <br>
+            <br>
+            Abbiamo portato l'equazione dalla forma <b>implicita</b>
+            \[
+            -10x + 5y + 1 = 0
+            \] alla forma <b>esplicita</b>
+            \[
+            y = 2x - \dfrac{1}{5}
+            \]
+            In questo modo vediamo che il coefficiente angolare della retta è \(2\), mentre il suo termine noto
+            è \(-\frac{1}{5}\).
+        </div>
+
+        <br>
+        <br>
+
+        L'equazione di qualsiasi retta <b>non verticale</b> può essere scritta sia in forma esplicita che implicita.
+        L'equazione rette <b>verticali</b> invece può essere scritta solamente in forma implicita.
+        <br>
+        Vediamo il perché nel seguente esempio.
+
+        <br>
+        <br>
+
+        <b class="gray">Esempio</b>
+        <br>
+        <div class="grayBorder">
+            Scriviamo l'equazione della retta verticale rappresentata in figura.
+            <br>
+            <br>
+            <img src="img/implicita(1).png" alt="">
+            <br>
+            <br>
+
+            <div id="slide-containerImPliCiTa2" class="slide-container ImPliCiTa2 grayBorder">
+                <div class="slideImPliCiTa2">
+                    Scriviamo le coordinate di una manciata di punti apparteneti alla retta.
+                    <br>
+                    <br>
+                    <img src="img/implicita(1).png" style="width: 80%;">
+                    <br>
+                    \[
+                    \begin{align*}
+                    &\color{transparent}{}(2\,,\,\,4) \quad (2\,,\,\,-3) \quad (2\,,\,\,0)
+                    \\\\
+                    &\color{transparent}{}(2\,,\,\,1) \quad (2\,,\,\,-2.5) \quad (2\,,\,\,-3)
+                    \end{align*}
+                    \]
+                </div>
+                <div class="slideImPliCiTa2">
+                    Scriviamo le coordinate di una manciata di punti apparteneti alla retta.
+                    <br>
+                    <br>
+                    <img src="img/implicita(2).png" style="width: 80%;">
+                    <br>
+                    \[
+                    \begin{align*}
+                    &\color{transparent}{}(2\,,\,\,4) \quad (2\,,\,\,-3) \quad (2\,,\,\,0)
+                    \\\\
+                    &\color{transparent}{}(2\,,\,\,1) \quad (2\,,\,\,-2.5) \quad (2\,,\,\,-3)
+                    \end{align*}
+                    \]
+                </div>
+                <div class="slideImPliCiTa2">
+                    Scriviamo le coordinate di una manciata di punti apparteneti alla retta.
+                    <br>
+                    <br>
+                    <img src="img/implicita(2).png" style="width: 80%;">
+                    <br>
+                    \[
+                    \begin{align*}
+                    &(2\,,\,\,4) \quad \color{transparent}{}(2\,,\,\,-3) \quad (2\,,\,\,0)
+                    \\\\
+                    &\color{transparent}{}(2\,,\,\,1) \quad (2\,,\,\,-2.5) \quad (2\,,\,\,-3)
+                    \end{align*}
+                    \]
+                </div>
+                <div class="slideImPliCiTa2">
+                    Scriviamo le coordinate di una manciata di punti apparteneti alla retta.
+                    <br>
+                    <br>
+                    <img src="img/implicita(3).png" style="width: 80%;">
+                    <br>
+                    \[
+                    \begin{align*}
+                    &(2\,,\,\,4) \quad \color{transparent}{}(2\,,\,\,-3) \quad (2\,,\,\,0)
+                    \\\\
+                    &\color{transparent}{}(2\,,\,\,1) \quad (2\,,\,\,-2.5) \quad (2\,,\,\,-3)
+                    \end{align*}
+                    \]
+                </div>
+                <div class="slideImPliCiTa2">
+                    Scriviamo le coordinate di una manciata di punti apparteneti alla retta.
+                    <br>
+                    <br>
+                    <img src="img/implicita(3).png" style="width: 80%;">
+                    <br>
+                    \[
+                    \begin{align*}
+                    &(2\,,\,\,4) \quad (2\,,\,\,-3) \quad \color{transparent}{}(2\,,\,\,0)
+                    \\\\
+                    &\color{transparent}{}(2\,,\,\,1) \quad (2\,,\,\,-2.5) \quad (2\,,\,\,-3)
+                    \end{align*}
+                    \]
+                </div>
+                <div class="slideImPliCiTa2">
+                    Scriviamo le coordinate di una manciata di punti apparteneti alla retta.
+                    <br>
+                    <br>
+                    <img src="img/implicita(4).png" style="width: 80%;">
+                    <br>
+                    \[
+                    \begin{align*}
+                    &(2\,,\,\,4) \quad (2\,,\,\,-3) \quad \color{transparent}{}(2\,,\,\,0)
+                    \\\\
+                    &\color{transparent}{}(2\,,\,\,1) \quad (2\,,\,\,-2.5) \quad (2\,,\,\,-3)
+                    \end{align*}
+                    \]
+                </div>
+                <div class="slideImPliCiTa2">
+                    Scriviamo le coordinate di una manciata di punti apparteneti alla retta.
+                    <br>
+                    <br>
+                    <img src="img/implicita(4).png" style="width: 80%;">
+                    <br>
+                    \[
+                    \begin{align*}
+                    &(2\,,\,\,4) \quad (2\,,\,\,-3) \quad (2\,,\,\,0)
+                    \\\\
+                    &\color{transparent}{}(2\,,\,\,1) \quad (2\,,\,\,-2.5) \quad (2\,,\,\,-3)
+                    \end{align*}
+                    \]
+                </div>
+                <div class="slideImPliCiTa2">
+                    Scriviamo le coordinate di una manciata di punti apparteneti alla retta.
+                    <br>
+                    <br>
+                    <img src="img/implicita(5).png" style="width: 80%;">
+                    <br>
+                    \[
+                    \begin{align*}
+                    &(2\,,\,\,4) \quad (2\,,\,\,-3) \quad (2\,,\,\,0)
+                    \\\\
+                    &\color{transparent}{}(2\,,\,\,1) \quad (2\,,\,\,-2.5) \quad (2\,,\,\,-3)
+                    \end{align*}
+                    \]
+                </div>
+                <div class="slideImPliCiTa2">
+                    Scriviamo le coordinate di una manciata di punti apparteneti alla retta.
+                    <br>
+                    <br>
+                    <img src="img/implicita(5).png" style="width: 80%;">
+                    <br>
+                    \[
+                    \begin{align*}
+                    &(2\,,\,\,4) \quad (2\,,\,\,-3) \quad (2\,,\,\,0)
+                    \\\\
+                    &(2\,,\,\,1) \quad \color{transparent}{}(2\,,\,\,-2.5) \quad (2\,,\,\,-3)
+                    \end{align*}
+                    \]
+                </div>
+                <div class="slideImPliCiTa2">
+                    Scriviamo le coordinate di una manciata di punti apparteneti alla retta.
+                    <br>
+                    <br>
+                    <img src="img/implicita(6).png" style="width: 80%;">
+                    <br>
+                    \[
+                    \begin{align*}
+                    &(2\,,\,\,4) \quad (2\,,\,\,-3) \quad (2\,,\,\,0)
+                    \\\\
+                    &(2\,,\,\,1) \quad \color{transparent}{}(2\,,\,\,-2.5) \quad (2\,,\,\,-3)
+                    \end{align*}
+                    \]
+                </div>
+                <div class="slideImPliCiTa2">
+                    Scriviamo le coordinate di una manciata di punti apparteneti alla retta.
+                    <br>
+                    <br>
+                    <img src="img/implicita(6).png" style="width: 80%;">
+                    <br>
+                    \[
+                    \begin{align*}
+                    &(2\,,\,\,4) \quad (2\,,\,\,-3) \quad (2\,,\,\,0)
+                    \\\\
+                    &(2\,,\,\,1) \quad (2\,,\,\,-2.5) \quad \color{transparent}{}(2\,,\,\,-3)
+                    \end{align*}
+                    \]
+                </div>
+                <div class="slideImPliCiTa2">
+                    Scriviamo le coordinate di una manciata di punti apparteneti alla retta.
+                    <br>
+                    <br>
+                    <img src="img/implicita(7).png" style="width: 80%;">
+                    <br>
+                    \[
+                    \begin{align*}
+                    &(2\,,\,\,4) \quad (2\,,\,\,-3) \quad (2\,,\,\,0)
+                    \\\\
+                    &(2\,,\,\,1) \quad (2\,,\,\,-2.5) \quad (2\,,\,\,-3)
+                    \end{align*}
+                    \]
+                </div>
+                <div class="slideImPliCiTa2">
+                    Scriviamo le coordinate di una manciata di punti apparteneti alla retta.
+                    <br>
+                    <br>
+                    <img src="img/implicita(1).png" style="width: 80%;">
+                    <br>
+                    \[
+                    \begin{align*}
+                    &(\color{red}{2}\color{black}{}\,,\,\,4) \quad (\color{red}{2}\color{black}{}\,,\,\,-3) \quad
+                    (\color{red}{2}\color{black}{}\,,\,\,0)
+                    \\\\
+                    &(\color{red}{2}\color{black}{}\,,\,\,1) \quad (\color{red}{2}\color{black}{}\,,\,\,-2.5) \quad
+                    (\color{red}{2}\color{black}{}\,,\,\,-3)
+                    \end{align*}
+                    \]
+                </div>
+                <div class="slideImPliCiTa2">
+                    Tutti i punti della retta hanno coordinata \(x\) uguale a \(2\).
+                    <br>
+                    <br>
+                    <img src="img/implicita(1).png" style="width: 80%;">
+                    <br>
+                    \[
+                    \begin{align*}
+                    &(2\,,\,\,4) \quad (2\,,\,\,-3) \quad (2\,,\,\,0)
+                    \\\\
+                    &(2\,,\,\,1) \quad (2\,,\,\,-2.5) \quad (2\,,\,\,-3)
+                    \end{align*}
+                    \]
+                </div>
+                <div class="slideImPliCiTa2">
+                    Tutti i punti della retta hanno coordinata \(x\) uguale a \(2\). Quindi l'equazione della retta è
+                    \[
+                    x = 2
+                    \]
+
+                    <img src="img/implicita(1).png" style="width: 80%;">
+                    <br>
+                    \[
+                    \begin{align*}
+                    &(2\,,\,\,4) \quad (2\,,\,\,-3) \quad (2\,,\,\,0)
+                    \\\\
+                    &(2\,,\,\,1) \quad (2\,,\,\,-2.5) \quad (2\,,\,\,-3)
+                    \end{align*}
+                    \]
+                </div>
+                <div class="slideImPliCiTa2">
+                    Tutti i punti della retta hanno coordinata \(x\) uguale a \(2\). Quindi l'equazione della retta è
+                    \[
+                    x = 2
+                    \]
+
+                    <img src="img/implicita(1).png" style="width: 80%;">
+                </div>
+            </div>
+            <div style="display: flex; flex-direction:row; justify-content: space-evenly; align-items: center;">
+                <button id="previousSlide-buttonImPliCiTa2" onclick="previousSlide(`ImPliCiTa2`)">Indietro</button>
+                <button onclick="toggleFullscreen('ImPliCiTa2')">⛶</button>
+                <button id="nextSlide-buttonImPliCiTa2" onclick="nextSlide(`ImPliCiTa2`)">Avanti</button>
+            </div>
+        </div>
+
+        <br>
+        <br>
+
+        L'equazione della retta verticale è \(x = 2\).
+        <br>
+        Vediamo che la forma di questa equazione non
+        è riconducibile alla forma esplicita \(y = mx + q\), perché manca la \(y\) nell'equazione.
+
+        <br>
+        <br>
+
+        Riassumendo:
+
+        <br>
+        <div class="grayBackground">
+            L'equazione di una retta <b>non verticale</b> può essere scritta sia in forma esplicita che implicita.
+            Per passare dalla forma implicita a quella esplicita basta isolare la \(y\).
+            <br>
+            <br>
+            <img src="img/implicita(8).png" alt="">
+            <br>
+
+            L'equazione di una retta <b>verticale</b> può essere scritta solo nella forma implicita \(x =
+            \text{costante}\)
+            <br>
+            <br>
+            <img src="img/implicita(9).png" alt="">
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <h3 class="green">Esercizio</h3>
+    <br>
+    <div>
+        Individuare il <b>coefficiente angolare</b> e <b>termine noto</b> della retta di equazione
+        \[
+        5x + 4y -1 = 0
+        \]
+
+        <br>
+
+        <button id="hintAAAAAAA(1)-button" onclick="showHint(`AAAAAAA(1)`)">Soluzione</button>
+        <div id="hintAAAAAAA(1)" class="hint gray" style="display: none;">
+            <b class="gray">Soluzione</b>
+            <br>
+            Il coefficiente angolare della retta è \(m = - \dfrac{5}{4}\), mentre il termine noto è \(q = \dfrac{1}{4}\).            
+        </div>
+
+        <br>
+
+        <button id="hintAAAAAAA(2)-button" onclick="showHint(`AAAAAAA(2)`)">Svolgimento</button>
+        <div id="hintAAAAAAA(2)" class="hint gray" style="display: none;">
+            <b class="gray">Svolgimento</b>
+            <br>
+            <br>
+            Prima di tutto portiamo l'equazione
+            \[
+            5x + 4y -1 = 0
+            \]
+            nella forma
+            \[
+            y = \color{blue}{}m\color{black}{}x + \color{red}{}q
+            \]
+            Per farlo isoliamo la \(y\) nell'equazione:
+            \[
+            \begin{align*}
+            & 5x +4y -1 = 0
+            \\\\
+            & 4y = -5x + 1
+            \\\\
+            & \dfrac{\cancel{4}y}{\color{green}{\cancel{4}}} = \dfrac{-5x +1}{\color{green}{4}}
+            \\\\
+            & y = \dfrac{-5x + 1}{4}
+            \\\\
+            & y = \color{blue}{}-\dfrac{5}{4}\color{black}{}x + \color{red}{}\dfrac{1}{4}
+            \end{align*}
+            \]
+            Ora che l'equazione della retta è in <b>forma esplicita</b> possiamo leggere il coefficiente
+            angolare ed il termine noto:
+            \[
+            \begin{align*}
+            \color{blue}{}m\color{black}{} = \color{blue}{}-\dfrac{5}{4}
+            \\\\
+            \color{red}{}q\color{black}{} = \color{red}{}\dfrac{1}{4}
+            \end{align*}
+            \]
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+
+    <h3 class="green">Esercizio</h3>
+    <br>
+    <div>
+        Stabilire quali tra le seguenti rette hanno la stessa inclinazione <b>senza rappresentarle</b> sul piano
+        cartesiano.
+        <br>
+        <br>
+        <ul>
+            <li>
+                <b>a)</b> \(\quad y = \dfrac{1}{2}x + 2\)
+            </li>
+            <br>
+            <li>
+                <b>b)</b> \(\quad y = -3x - \dfrac{1}{2}\)
+            </li>
+            <br>
+            <li>
+                <b>c)</b> \(\quad 6x - 12y - 1 = 0\)
+            </li>
+            <br>
+            <li>
+                <b>d)</b> \(\quad -4x - 3y + 3 = 0\)
+            </li>
+            <br>
+            <li>
+                <b>e)</b> \(\quad y = -\dfrac{4}{3}\)
+            </li>
+            <br>
+            <li>
+                <b>f)</b> \(\quad -3y - x + 7 = 0\)
+            </li>
+            <br>
+            <li>
+                <b>g)</b> \(\quad 2y -x + 5 = 0\)
+            </li>
+            <br>
+        </ul>
+
+        <br>
+        <br>
+
+        <button id="hintAAAAAAA(3)-button" onclick="showHint(`AAAAAAA(3)`)">Soluzione</button>
+        <div id="hintAAAAAAA(3)" class="hint gray" style="display: none;">     
+            <b class="gray">Soluzione</b> 
+            <br>
+            
+            Solo le rette <b>a)</b>, <b>c)</b> e <b>g)</b> hanno la stesa inclinazione 
+            
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+
+    <h3 class="green">Esercizio</h3>
+    <br>
+    <div>
+        Associare ognuna delle seguenti equazioni alla retta che descrive.
+        <br>
+        <br>
+        <ul style="list-style: none;">
+            <li>
+                <b>1)</b> \(\quad y = \dfrac{1}{5}x\)
+            </li>
+            <br>
+            <li>
+                <b>2)</b> \(\quad y = 7x\)
+            </li>
+            <br>
+            <li>
+                <b>3)</b> \(\quad y = -2x\)
+            </li>
+            <br>
+            <li>
+                <b>4)</b> \(\quad y = 5x + 1\)
+            </li>
+            <br>
+            <li>
+                <b>5)</b> \(\quad y = 6\)
+            </li>
+            <br>
+            <li>
+                <b>a)</b>
+                <br>
+                <img style="border: 0" src="img/7(2).png" alt="">
+            </li>
+            <br>
+            <li>
+                <b>b)</b>
+                <br>
+                <img style="border: 0" src="img/7(3).png" alt="">
+            </li>
+            <br>
+            <li>
+                <b>c)</b>
+                <br>
+                <img style="border: 0" src="img/7(4).png" alt="" style="width: 70%">
+            </li>
+            <br>
+            <li>
+                <b>d)</b>
+                <br>
+                <img style="border: 0" src="img/7(5).png" alt="">
+            </li>
+            <br>
+            <li>
+                <b>e)</b>
+                <br>
+                <img style="border: 0" src="img/7(1).png" alt="">
+            </li>
+        </ul>
+
+        <br>
+        <br>
+
+        <button id="hintAAAAAAA(4)-button" onclick="showHint(`AAAAAAA(4)`)">Soluzione</button>
+        <div id="hintAAAAAAA(4)" class="hint gray" style="display: none;">     
+            <b class="gray">Soluzione</b> 
+            <br>
+            <b>1) - a)</b>, <b>2) - d)</b>, <b>3) - c)</b>, <b>4) - e) </b>, <b>5) - b)</b>                        
+        </div>
+
+    </div>
+
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+
+    <h3 class="green">Esercizio</h3>
+    <br>
+    <div>
+        Associare ognuna delle seguenti equazioni alla retta che descrive.
+        <br>
+        <br>
+        <ul style="list-style: none;">
+            <li>
+                <b>1)</b> \(\quad y = 3x + 1\)
+            </li>
+            <br>
+            <li>
+                <b>2)</b> \(\quad y = 2x - 3\)
+            </li>
+            <br>
+            <li>
+                <b>3)</b> \(\quad y = -\dfrac{1}{3}x\)
+            </li>
+            <br>
+            <li>
+                <b>4)</b> \(\quad y = 2x - 1\)
+            </li>
+            <br>
+            <li>
+                <b>5)</b> \(\quad y = -2x + 3\)
+            </li>
+            <br>
+            <li>
+                <b>a)</b>
+                <br>
+                <img style="border: 0" sty src="img/7(7).png" alt="">
+            </li>
+            <br>
+            <li>
+                <b>b)</b>
+                <br>
+                <img style="border: 0" src="img/7(10).png" alt="">
+            </li>
+            <br>
+            <li>
+                <b>c)</b>
+                <br>
+                <img style="border: 0" src="img/7(6).png" alt="" style="width: 70%">
+            </li>
+            <br>
+            <li>
+                <b>d)</b>
+                <br>
+                <img style="border: 0" src="img/7(9).png" alt="">
+            </li>
+            <br>
+            <li>
+                <b>e)</b>
+                <br>
+                <img style="border: 0" src="img/7(8).png" alt="">
+            </li>
+        </ul>
+
+        <br>
+        <br>
+
+        <button id="hintAAAAAAA(4)-button" onclick="showHint(`AAAAAAA(4)`)">Soluzione</button>
+        <div id="hintAAAAAAA(4)" class="hint gray" style="display: none;">     
+            <b class="gray">Soluzione</b> 
+            <br>
+            <b>1) - a)</b>, <b>2) - e)</b>, <b>3) - c)</b>, <b>4) - b) </b>, <b>5) - d)</b>                        
+        </div>
+
+    </div>
+
+    <br>
+
+    <div class="gray">
+        <b>Suggerimento</b>
+        <br>
+        Per svolgere l'esercizio è sufficiente osservate i termini noti ed i coefficienti angolari delle equazioni.
+
+    </div>
+
+
+
+    <br>
+    <br>
+
+
+    <script src="../../js/hintAndSlide.js"></script>
+
+    <br>
+    <br>
+
+
+</body>
