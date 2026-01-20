@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script language="javascript" type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.min.js"></script>
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>Compiti per casa</title>
+</head>
+
+<body>
+    <h1>Compiti per casa</h1>
+
+    <br>
+
+    <h3 class="green">Esercizio</h3>
+    <br>
+    <div>
+        Sia \(r\) la retta passante per i punti \(A\left(\dfrac{5}{2}\,,\,\,-2\right)\) e
+        \(B\left(-3\,,\,\,\dfrac{3}{2}\right)\).
+        Scrivere l'equazione della retta \(s\) perpendicolare alla retta \(r\) e passante per il punto
+        \(P(-4\,,\,\,9)\).
+
+        <br>
+        <br>
+
+        <button id="hintAAAAAAA(1)-button" onclick="showHint(`AAAAAAA(1)`)">Soluzione</button>
+        <div id="hintAAAAAAA(1)" class="hint gray" style="display: none;">
+            <b class="gray">Soluzione</b>
+            <br>
+            L'equazione della retta \(s\) è
+            \[
+            y = \frac{11}{7}x + \frac{107}{7}
+            \]
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+
+    <h3 class="green">Esercizio</h3>
+    <br>
+    <div>
+        Determinare l'equazione della retta \(r\) paralella alla retta
+        \[
+        s:\qquad 5x -2y - 4 = 0
+        \]
+        e passante per il punto \(P\left(\dfrac{1}{4}\,,\,\,-3\right)\)
+
+        <br>
+        <br>
+
+        <button id="hintAAAAAAA(3)-button" onclick="showHint(`AAAAAAA(3)`)">Soluzione</button>
+        <div id="hintAAAAAAA(3)" class="hint gray" style="display: none;">
+            <b class="gray">Soluzione</b>
+            <br>
+            L'equazione della retta \(r\) è
+            \[
+            y = \frac{5}{2}x-\frac{29}{8}
+            \]
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+
+    <h3 class="green">Esercizio</h3>
+    <br>
+    <div>
+        Consideriamo la retta associata all'equazione
+        \[
+        y = (2\color{blue}{}a\color{black}{} - 1)x + 3
+        \]
+        con \(\color{blue}{}a\color{black}{}\) numero qualsiasi.
+        <br>
+        <br>
+        Osserviamo due fatti
+        <br>
+        <br>
+        <ul>
+            <li>
+                il coefficiente angolare della retta è \(2\color{blue}{}a\color{black}{} - 1\).
+                <br>
+                Al variare della scelta del valore di \(\color{blue}{}a\) il coefficiente angolare cambia e con
+                esso l'inclinazione della retta.
+            </li>
+            <br>
+            <li>
+                il termine noto \(3\) è costante, dunque per qualsiasi scelta del valore di \(\color{blue}{}a\) la retta
+                ottenuta passerà per il punto \((0\,;\,\,3)\).
+            </li>
+        </ul>
+
+        <br>
+        <div class="geogebra-container">
+            <div id="geogebra1"></div>
+        </div>
+        <span class="gray" style="font-size: 0.9rem;">(usate lo slider per variare il valore del parametro \(a\))</span>
+
+        <br>
+        <br>
+
+        <ul>
+            <li>
+                Stabilire per quale valore di \(\color{blue}{}a\) la retta è <b>orizzontale</b>.
+            </li>
+            <br>
+            <li>
+                Stabilire per quale valore di \(\color{blue}{}a\) la retta è <b>decrescente</b>.
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        let ggbApp1 = new GGBApplet({
+            /* appletOnLoad(api) {
+                api.registerObjectUpdateListener("A","stampaValori2");
+            }, */
+            "appName": "classic",
+            "id": "gg1",
+            "scaleContainerClass": "geogebra-container",
+            "showToolBar": false,
+            "showAlgebraInput": false,
+            "showMenuBar": false,
+            "enableShiftDragZoom": false,
+            "filename": "img/9(1).ggb"
+        },
+            true);
+
+
+
+
+
+
+
+        window.addEventListener("load", function () {
+            ggbApp1.inject('geogebra1');
+        }
+        )
+    </script>
+
+    <br>
+    <br>
+
+
+    <script src="../../js/hintAndSlide.js"></script>
+
+    <br>
+    <br>
+
+
+</body>
