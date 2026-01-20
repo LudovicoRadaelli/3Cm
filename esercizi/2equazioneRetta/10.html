@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script language="javascript" type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.min.js"></script>
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>Compiti per casa</title>
+</head>
+
+<body>
+    <h1>Compiti per casa</h1>
+
+    <br>
+
+    <h3 class="yellow">Distanza tra due punti</h3>
+    <div class="esempi-container">
+
+
+
+        <b style="font-size: 1.3rem;">Teorema di Pitagora</b>
+
+        <br>
+        <br>
+
+        Ricordiamo di seguito l'enunciato del teorema.
+
+        <div class="grayBackground">
+            <b>Teorema di Pitagora</b>
+            <br>
+            <br>
+            Dato un triangolo <u>rettangolo</u> vale la seguente uguaglianza:
+            \[
+            \text{ipotenusa}^2 = \left(\text{cateto}_{1}\right)^2 \,+\, \left(\text{cateto}_{2}\right)^2
+            \]
+        </div>
+
+        <br>
+
+
+        Il teorema di Pitagora stabilisce la relazione che intercorre tra i tre lati di un triangolo rettangolo.
+
+
+        Quindi possiamo usarlo per trovare un lato del triangolo se sappiamo gli altri due usando le due formule
+        inverse.
+
+
+        <br>
+
+
+        La prima permette di trovare l'ipotenusa a partire dai due cateti:
+
+
+        <br>
+        <br>
+
+        <div class="grayBackground" style="font-size: 1rem; width: fit-content; margin: auto;">
+            \[
+            \text{ipotenusa} = \sqrt{\left(\text{cateto}_{1}\right)^2 \,+\, \left(\text{cateto}_{2}\right)^2}
+            \]
+        </div>
+
+        <br>
+        <br>
+
+        La seconda permette di trovare un cateto a partire dall'ipotenusa e dall'altro cateto:
+
+        <br>
+        <br>
+
+        <div class="grayBackground" style="font-size: 1rem;width: fit-content; margin: auto;">
+            \[
+            \text{cateto}_{1} = \sqrt{\text{ipotenusa}^2 \,-\, \left(\text{cateto}_{2}\right)^2}
+            \]
+        </div>
+
+        <br>
+        <br>
+
+        <h3 class="gray">Esempi</h3>
+        <div class="grayBorder">
+            Supponiamo di conoscere la misura del cateto minore, \(3\), e quella del cateto maggiore, \(4\).
+            Quanto misura l'ipotenusa?
+            <br>
+            Usiamo la prima formula:
+            \[
+            \begin{align*}
+            \text{ipotenusa} &= \sqrt{\left(\text{cateto}_{1}\right)^2 \,+\, \left(\text{cateto}_{2}\right)^2}
+            \\\\
+            &= \sqrt{4^2 + 3^2}
+            \\\\
+            &= \sqrt{16 + 9}
+            \\\\
+            &= \sqrt{25}
+            \\\\
+            &= 5
+            \end{align*}
+            \]
+
+
+            <br>
+            <hr>
+            <br>
+            <br>
+
+            Supponiamo di conoscere la misura dell'ipotenusa, \(13\), e quella del cateto minore, \(5\).
+            Quanto misura il cateto maggiore?
+            <br>
+            Usiamo la seconda formula inversa:
+
+            \[
+            \begin{align*}
+            \text{cateto}_{1} &= \sqrt{\text{ipotenusa}^2 \,-\, \left(\text{cateto}_{2}\right)^2}
+            \\\\
+            &= \sqrt{13^2 \,-\, 5^2}
+            \\\\
+            &= \sqrt{169 \,-\, 25}
+            \\\\
+            &= \sqrt{144}
+            \\\\
+            &= 12
+            \end{align*}
+            \]
+
+        </div>
+        <br>
+        <p>
+            Esistono <a href="https://www.cut-the-knot.org/pythagoras/">tonnellate di dimostrazioni</a> del teorema
+            di Pitagora.
+            Di seguito potete vederne una particolarmente interessante.
+        </p>
+        <br>
+        <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+            <iframe src="https://www.youtube.com/embed/CAkMUdeB06o" title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen style="width: fit-content; "></iframe>
+        </div>
+
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+
+        <b style="font-size: 1.3rem;">Distanza tra due punti</b>
+
+        <br>
+        <br>
+
+        Consideriamo il seguente problema:
+
+        <br>
+        <br>
+
+        <div class="grayBorder">
+            Abbiamo i punti \(A\left(1; 3\right)\) e \(B\left(5; 6\right)\) e vogliamo trovare
+            la misura della loro distanza.
+        </div>
+
+        <br>
+
+        <div id="slide-containerdiSTanzAPn" class="slide-container diSTanzAPn grayBorder">
+            <div class="slidediSTanzAPn">
+                <img class="slideImg" src="img/dist(1).png" alt="">
+                <br>
+                <p class="slideText gray"></p>
+            </div>
+            <div class="slidediSTanzAPn">
+                <img class="slideImg" src="img/dist(2).png" alt="">
+                <br>
+                <p class="slideText gray">
+                    Disegnamo questo triangolo rettangolo, in modo da poter sfruttare il teorema di Pitagora.
+                </p>
+            </div>
+            <div class="slidediSTanzAPn">
+                <img class="slideImg" src="img/dist(3).png" alt="">
+                <br>
+                <p class="slideText gray">
+                    La misura del cateto blu è la differenza tra \(x_B\) ed \(x_A\)
+                </p>
+            </div>
+            <div class="slidediSTanzAPn">
+                <img class="slideImg" src="img/dist(4).png" alt="">
+                <br>
+                <p class="slideText gray">
+                    La misura del cateto blu è la differenza tra \(y_B\) ed \(y_A\)
+                </p>
+            </div>
+            <div class="slidediSTanzAPn">
+                <img class="slideImg" src="img/dist(5).png" alt="">
+                <br>
+                <p class="slideText gray">
+                    Abbiamo trovato la misura di entrambi i cateti rispetto alle coordinate di \(A\) e \(B\).
+                    Usiamo il teorema di Pitagora per trovare l'ipotenusa del triangolo, che è la distanza tra \(A\)
+                    e \(B\)
+                </p>
+            </div>
+            <div class="slidediSTanzAPn">
+                <img class="slideImg" src="img/dist(6).png" alt="">
+                <br>
+                <p class="slideText gray formula" style="font-size: 0.9rem;">
+                    \[
+                    \text{ipotenusa} = \sqrt{\left(\text{cateto}_{1}\right)^2 \,+\,
+                    \left(\text{cateto}_{2}\right)^2}
+                    \]
+                    <span style="font-size: 1rem;">Quindi</span>
+                    \[
+                    AB = \sqrt{\left(x_B-x_A\right)^2 \,+\, \left(y_B-y_A\right)^2}
+                    \]
+                </p>
+            </div>
+
+        </div>
+
+        <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+            <button id="previousSlide-buttondiSTanzAPn" onclick="previousSlide(`diSTanzAPn`)">Indietro</button>
+            <button onclick="toggleFullscreen('diSTanzAPn')">⛶</button>
+            <button id="nextSlide-buttondiSTanzAPn" onclick="nextSlide(`diSTanzAPn`)">Avanti</button>
+        </div>
+
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+
+        Riassumendo:
+
+        <br>
+        <br>
+
+        <div class="grayBackground">
+            <b>Formula della distanza tra due punti</b>
+
+            <br>
+            Dati i punti
+            \[A\left(x_{_A}\,\,\,; y_{_A}\right) \qquad B\left(x_{_B}\,\,\,; y_{_B}\right)\]
+            la distanza tra \(A\) e \(B\) è
+            \[
+            AB = \sqrt{\left(x_{_B}-x_{_A}\right)^2 \,+\, \left(y_{_B}-y_{_A}\right)^2}
+            \]
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <h3 class="green">Esercizio guida</h3>
+    <br>
+    <div>
+        Stabilire la distanza tra le seguenti coppie di punti
+        \[
+        A(4\,;\,\,2) \qquad B(7\,;\,\,6)
+        \]
+        <u><b>Svolgimento</b></u>
+        <br>
+        <div id="slide-containeryHqPNyaTqW" class="slide-container yHqPNyaTqW grayBorder">
+            <div class="slideyHqPNyaTqW">
+                \[
+                A(4\,;\,\,2) \qquad B(7\,;\,\,6)
+                \]
+            </div>
+            <div class="slideyHqPNyaTqW">
+                \[
+                A(4\,;\,\,2) \qquad B(7\,;\,\,6)
+                \]
+                Applichiamo la formula studiata nell'Esercizio 0:
+                \[
+                \overline{AB} = \sqrt{(x_B - x_A)^2 + (y_B - y_A)^2}
+                \]
+            </div>
+            <div class="slideyHqPNyaTqW">
+                \[
+                A(4\,;\,\,2) \qquad B(\color{red}{}7\color{black}{}\,;\,\,6)
+                \]
+                Applichiamo la formula studiata nell'Esercizio 0:
+                \[
+                \overline{AB} = \sqrt{(x_B - x_A)^2 + (y_B - y_A)^2}
+                \]
+            </div>
+            <div class="slideyHqPNyaTqW">
+                \[
+                A(4\,;\,\,2) \qquad B(7\,;\,\,6)
+                \]
+                Applichiamo la formula studiata nell'Esercizio 0:
+                \[
+                \overline{AB} = \sqrt{(\color{red}{}7\color{black}{} - x_A)^2 + (y_B - y_A)^2}
+                \]
+            </div>
+            <div class="slideyHqPNyaTqW">
+                \[
+                A(\color{red}{}4\color{black}{}\,;\,\,2) \qquad B(7\,;\,\,6)
+                \]
+                Applichiamo la formula studiata nell'Esercizio 0:
+                \[
+                \overline{AB} = \sqrt{(7 - x_A)^2 + (y_B - y_A)^2}
+                \]
+            </div>
+            <div class="slideyHqPNyaTqW">
+                \[
+                A(4\,;\,\,2) \qquad B(7\,;\,\,6)
+                \]
+                Applichiamo la formula studiata nell'Esercizio 0:
+                \[
+                \overline{AB} = \sqrt{(7 - \color{red}{}4\color{black}{})^2 + (y_B - y_A)^2}
+                \]
+            </div>
+            <div class="slideyHqPNyaTqW">
+                \[
+                A(4\,;\,\,2) \qquad B(7\,;\,\,\color{red}{}6\color{black}{})
+                \]
+                Applichiamo la formula studiata nell'Esercizio 0:
+                \[
+                \overline{AB} = \sqrt{(7 - 4)^2 + (y_B - y_A)^2}
+                \]
+            </div>
+            <div class="slideyHqPNyaTqW">
+                \[
+                A(4\,;\,\,2) \qquad B(7\,;\,\,6)
+                \]
+                Applichiamo la formula studiata nell'Esercizio 0:
+                \[
+                \overline{AB} = \sqrt{(7 - 4)^2 + (\color{red}{}6\color{black}{} - y_A)^2}
+                \]
+            </div>
+            <div class="slideyHqPNyaTqW">
+                \[
+                A(4\,;\,\,\color{red}{}2\color{black}{}) \qquad B(7\,;\,\,6)
+                \]
+                Applichiamo la formula studiata nell'Esercizio 0:
+                \[
+                \overline{AB} = \sqrt{(7 - 4)^2 + (6 - y_A)^2}
+                \]
+            </div>
+            <div class="slideyHqPNyaTqW">
+                \[
+                A(4\,;\,\,2) \qquad B(7\,;\,\,6)
+                \]
+                Applichiamo la formula studiata nell'Esercizio 0:
+                \[
+                \overline{AB} = \sqrt{(7 - 4)^2 + (6 - \color{red}{}2\color{black}{})^2}
+                \]
+            </div>
+            <div class="slideyHqPNyaTqW">
+                \[
+                A(4\,;\,\,2) \qquad B(7\,;\,\,6)
+                \]
+                Applichiamo la formula studiata nell'Esercizio 0:
+                \[
+                \overline{AB} = \sqrt{(\color{red}{}7 - 4\color{black}{})^2 + (6 - 2)^2}
+                \]
+            </div>
+            <div class="slideyHqPNyaTqW">
+                \[
+                A(4\,;\,\,2) \qquad B(7\,;\,\,6)
+                \]
+                Applichiamo la formula studiata nell'Esercizio 0:
+                \[
+                \overline{AB} = \sqrt{\color{red}{}3\color{black}{}^2 + (6 - 2)^2}
+                \]
+            </div>
+            <div class="slideyHqPNyaTqW">
+                \[
+                A(4\,;\,\,2) \qquad B(7\,;\,\,6)
+                \]
+                Applichiamo la formula studiata nell'Esercizio 0:
+                \[
+                \overline{AB} = \sqrt{\color{red}{}3^2\color{black}{} + (6 - 2)^2}
+                \]
+            </div>
+            <div class="slideyHqPNyaTqW">
+                \[
+                A(4\,;\,\,2) \qquad B(7\,;\,\,6)
+                \]
+                Applichiamo la formula studiata nell'Esercizio 0:
+                \[
+                \overline{AB} = \sqrt{\color{red}{}9\color{black}{} + (6 - 2)^2}
+                \]
+            </div>
+            <div class="slideyHqPNyaTqW">
+                \[
+                A(4\,;\,\,2) \qquad B(7\,;\,\,6)
+                \]
+                Applichiamo la formula studiata nell'Esercizio 0:
+                \[
+                \overline{AB} = \sqrt{9 + (\color{red}{}6 - 2\color{black}{})^2}
+                \]
+            </div>
+            <div class="slideyHqPNyaTqW">
+                \[
+                A(4\,;\,\,2) \qquad B(7\,;\,\,6)
+                \]
+                Applichiamo la formula studiata nell'Esercizio 0:
+                \[
+                \overline{AB} = \sqrt{9 + \color{red}{}4\color{black}{}^2}
+                \]
+            </div>
+            <div class="slideyHqPNyaTqW">
+                \[
+                A(4\,;\,\,2) \qquad B(7\,;\,\,6)
+                \]
+                Applichiamo la formula studiata nell'Esercizio 0:
+                \[
+                \overline{AB} = \sqrt{9 + \color{red}{}4^2\color{black}{}}
+                \]
+            </div>
+            <div class="slideyHqPNyaTqW">
+                \[
+                A(4\,;\,\,2) \qquad B(7\,;\,\,6)
+                \]
+                Applichiamo la formula studiata nell'Esercizio 0:
+                \[
+                \overline{AB} = \sqrt{9 + \color{red}{}16\color{black}{}}
+                \]
+            </div>
+            <div class="slideyHqPNyaTqW">
+                \[
+                A(4\,;\,\,2) \qquad B(7\,;\,\,6)
+                \]
+                Applichiamo la formula studiata nell'Esercizio 0:
+                \[
+                \overline{AB} = \sqrt{\color{red}{}9 + 16\color{black}{}}
+                \]
+            </div>
+            <div class="slideyHqPNyaTqW">
+                \[
+                A(4\,;\,\,2) \qquad B(7\,;\,\,6)
+                \]
+                Applichiamo la formula studiata nell'Esercizio 0:
+                \[
+                \overline{AB} = \sqrt{\color{red}{}25\color{black}{}}
+                \]
+            </div>
+            <div class="slideyHqPNyaTqW">
+                \[
+                A(4\,;\,\,2) \qquad B(7\,;\,\,6)
+                \]
+                Applichiamo la formula studiata nell'Esercizio 0:
+                \[
+                \overline{AB} = \color{red}{}\sqrt{25}
+                \]
+            </div>
+            <div class="slideyHqPNyaTqW">
+                \[
+                A(4\,;\,\,2) \qquad B(7\,;\,\,6)
+                \]
+                Applichiamo la formula studiata nell'Esercizio 0:
+                \[
+                \overline{AB} = \color{red}{}5
+                \]
+            </div>
+
+
+        </div>
+        <div style="display: flex; flex-direction:row; justify-content: space-evenly; align-items: center;">
+            <button id="previousSlide-buttonyHqPNyaTqW" onclick="previousSlide(`yHqPNyaTqW`)">Indietro</button>
+            <button onclick="toggleFullscreen('yHqPNyaTqW')">⛶</button>
+            <button id="nextSlide-buttonyHqPNyaTqW" onclick="nextSlide(`yHqPNyaTqW`)">Avanti</button>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+
+    <h3 class="green">Esercizio</h3>
+    <br>
+    <div>
+        Stabilire la distanza tra le seguenti coppie di punti
+        <br>
+        <br>
+        <ul>
+            <li>
+                \(A(2\,;\,\,3)\) e \(B(7\,;\,\,4)\)
+                <br>
+                <br>
+                <div class="gray">
+                    <b>Soluzione:</b> \(\sqrt{26}\)
+                </div>
+            </li>
+            <br>
+            <li>
+                \(C(-1\,;\,\,-2)\) e \(D(2\,;\,\,1)\)
+                <br>
+                <br>
+                <div class="gray">
+                    <b>Soluzione:</b> \(3\,\sqrt{2}\)
+                </div>
+            </li>
+            <br>
+            <li>
+                \(E(3\,;\,\,0)\) e \(F(-2\,;\,\,5)\)
+                <br>
+                <br>
+                <div class="gray">
+                    <b>Soluzione:</b> \(5\,\sqrt{2}\)
+                </div>
+            </li>
+            <br>
+            <li>
+                \(G\left(\dfrac{1}{2}\,;\,\,-1\right)\) e \(H\left(-1\,;\,\,\dfrac{2}{5}\right)\)
+                <br>
+                <br>
+                <div class="gray">
+                    <b>Soluzione:</b> \(\dfrac{\sqrt{421}}{10}\)
+                </div>
+            </li>
+            <br>
+        </ul>
+    </div>
+
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+
+    <h3 class="green">Esercizio</h3>
+    <br>
+    <div>
+        Sia \(r\) la retta passante per i punti \(A\left(\dfrac{2}{3}\,,\,\,\dfrac{5}{6}\right)\)
+        e \(B\left(\dfrac{1}{2}\,,\,\,\dfrac{1}{3}\right)\).
+        Scrivere l'equazione della retta \(s\) passante per il punto \(P\left(\dfrac{1}{5}\,,\,\,2\right)\) e
+        perpendicolare alla retta \(r\).
+
+        <br>
+        <br>
+
+        <button id="hintAAAAAAA(1)-button" onclick="showHint(`AAAAAAA(1)`)">Soluzione</button>
+        <div id="hintAAAAAAA(1)" class="hint gray" style="display: none;">
+            <b class="gray">Soluzione</b>
+            <br>
+            L'equazione della retta \(s\) è \(y = -\dfrac{1}{3}x + \dfrac{31}{15}\).
+        </div>
+    </div>
+
+
+    <script src="../../js/hintAndSlide.js"></script>
+
+    <br>
+    <br>
+
+
+</body>
