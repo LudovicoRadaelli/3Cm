@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script language="javascript" type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.min.js"></script>
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>Compiti per casa</title>
+</head>
+
+<body>
+    <h1>Compiti per casa</h1>
+
+    <br>
+
+
+    <h3 class="green">Esercizio 1</h3>
+    <br>
+    <div>
+        Consideriamo i punti
+        \[
+        P(2\,;\,\,2\color{blue}{}n\color{black}{}) \qquad Q(\color{blue}{}n\color{black}{}\,;\,\,-1)
+        \]
+        con \(\color{blue}{}n\color{black}{}\) numero intero positivo.
+        <br>
+        A seconda di come scegliamo il valore di \(\color{blue}{}n\color{black}{}\), le coordinate
+        dei punti \(P\) e \(Q\) variano.
+        <br>
+        <br>
+        <ul>
+            <li>
+                se \(\color{blue}{}n\color{black}{} = \color{blue}{}1\color{black}{}\), allora
+                \[
+                \begin{align*}
+                &P(2\,;\,\,2 \cdot \color{blue}{}1\color{black}{}) \,\,\,\,\Rightarrow \,\,\,\,P(2\,;\,\,2)
+                \\\\
+                &Q(\color{blue}{}1\color{black}{}\,;\,\,-1)
+                \end{align*}
+                \]
+            </li>
+            <br>
+            <li>
+                se \(\color{blue}{}n\color{black}{} = \color{blue}{}2\color{black}{}\), allora
+                \[
+                \begin{align*}
+                &P(2\,;\,\,2 \cdot \color{blue}{}2\color{black}{}) \,\,\,\,\Rightarrow \,\,\,\,P(2\,;\,\,4)
+                \\\\
+                &Q(\color{blue}{}2\color{black}{}\,;\,\,-1)
+                \end{align*}
+                \]
+            </li>
+            <br>
+            <li>
+                se \(\color{blue}{}n\color{black}{} = \color{blue}{}3\color{black}{}\), allora
+                \[
+                \begin{align*}
+                &P(2\,;\,\,2 \cdot \color{blue}{}3\color{black}{}) \,\,\,\,\Rightarrow \,\,\,\,P(2\,;\,\,6)
+                \\\\
+                &Q(\color{blue}{}3\color{black}{}\,;\,\,-1)
+                \end{align*}
+                \]
+            </li>
+            <br>
+            <li>
+                se \(\color{blue}{}n\color{black}{} = \color{blue}{}4\color{black}{}\), allora
+                \[
+                \begin{align*}
+                &P(2\,;\,\,2 \cdot \color{blue}{}4\color{black}{}) \,\,\,\,\Rightarrow \,\,\,\,P(2\,;\,\,8)
+                \\\\
+                &Q(\color{blue}{}4\color{black}{}\,;\,\,-1)
+                \end{align*}
+                \]
+            </li>
+            <br>
+            <li>
+                se \(\color{blue}{}n\color{black}{} = \color{blue}{}5\color{black}{}\), allora
+                \[
+                \begin{align*}
+                &P(2\,;\,\,2 \cdot \color{blue}{}5\color{black}{}) \,\,\,\,\Rightarrow \,\,\,\,P(2\,;\,\,10)
+                \\\\
+                &Q(\color{blue}{}5\color{black}{}\,;\,\,-1)
+                \end{align*}
+                \]
+            </li>
+        </ul>
+
+        Nella figura interattiva che segue potete usare lo slider per modificare il valore di \(n\). Di conseguenza
+        Geogebra rappresenterà i punti \(P\) e \(Q\).
+
+        <br>
+        <br>
+        <div class="geogebra-container">
+            <div id="geogebra1"></div>
+        </div>
+        <br>
+        Osserviamo che la <u>distanza</u> dei due punti \(P\) e \(Q\) varia al variare di \(\color{blue}{}n\)
+        <br>
+        <br>
+        <div class="grayBorder">
+            Le richieste dell'esercizio sono le seguenti
+            <ul>
+                <li>
+                    Scrivere la distanza dei punti \(P\) e \(Q\).
+                    <br>
+                    <br>
+                    <div class="gray">
+                        <b>Suggerimento</b>
+                        <br>
+                        Non lasciatevi impressionare dal fatto che ci sia quell'\(\color{blue}{}n\) di mezzo. La formula
+                        della distanza tra due punti è sempre la stessa.
+                        <br>
+                        Il risultato non sarà un numero concreto, ma una
+                        quantità dipendente da \(\color{blue}{}n\)
+                    </div>
+                </li>
+                <br>
+                <li>
+                    Stabilire per quale valore di \(n\) la distanza tra \(P\) e \(Q\) misura \(5\) unità.
+                    <br>
+                    <br>
+                    <div class="gray">
+                        <b>Suggerimento</b>
+                        <br>
+                        La distanza \(PQ\) l'avete calcolata nel punto precedente.
+                        <br>
+                        Ponetela uguale a \(5\) e risolvete l'equazione che ottenete rispetto all'incognita
+                        \(\color{blue}{}n\)
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        let ggbApp1 = new GGBApplet({
+            /* appletOnLoad(api) {
+                api.registerObjectUpdateListener("A","stampaValori2");
+            }, */
+            "appName": "classic",
+            "id": "gg1",
+            "scaleContainerClass": "geogebra-container",
+            "showToolBar": false,
+            "showAlgebraInput": false,
+            "showMenuBar": false,
+            "enableShiftDragZoom": false,
+            "filename": "img/distanzaPuntiDipendentiDaParametro.ggb"
+        },
+            true);
+
+        window.addEventListener("load", function () {
+            ggbApp1.inject('geogebra1');
+        }
+        )
+    </script>
+
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+
+    <h3 class="green">Esercizio</h3>
+    <br>
+    <div>
+        Consideriamo i punti
+        \[
+        P\left(1 - \color{blue}n\color{black}{}\,;\,\,\color{blue}n\color{black}{}\right) \qquad
+        Q\left(3\color{blue}n\color{black}{} - 1\,;\,\,1 + \color{blue}n\color{black}{}\right)
+        \]
+        con \(\color{blue}{}n\color{black}{}\) numero intero positivo.
+        <br>
+        <br>
+        <ul>
+            <li>
+                Rappresentare sul piano cartesiano i punti \(P\) e \(Q\) per \(n = 0\),\(\,\,n = 1\), \(\,\,n = 2\).
+            </li>
+            <br>
+            <li>
+                Calcolare la distanza tra \(P\) e \(Q\) in funzione di \(\color{blue}n\color{black}{}\).
+            </li>
+            <br>
+            <li>
+                Stabilire per quale valore di \(\color{blue}n\color{black}{}\) la distanza
+                tra \(P\) e \(Q\) misura \(5\).
+            </li>
+        </ul>
+
+        <br>
+        <br>
+
+        <button id="hintAAAAAAA(1)-button" onclick="showHint(`AAAAAAA(1)`)">Soluzione</button>
+        <div id="hintAAAAAAA(1)" class="hint gray" style="display: none;">
+            <b class="gray">Soluzione</b>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+
+    <h3 class="green">Esercizio</h3>
+    <br>
+    <div>
+        Date le rette
+        \[
+        r:\qquad (2\color{blue}{}b\color{black}{} + 1)x - 2y + 1 = 0
+        \]
+        \[
+        s:\qquad y = (-3\color{blue}{}b\color{black}{} + 2)x + 2\color{blue}{}b\color{black}{}
+        \]
+        entrambe dipendenti dal parametro \(\color{blue}{}b\color{black}{} \in \mathbb{R}\).
+        <br>
+        <br>
+        <ul>
+            <li>
+                Stabilire il coefficiente angolare ed il termine noto della retta \(r\)
+                <br>
+                <br>
+                <div class="gray">
+                    <b>Osservazione:</b>
+                    <br>
+                    La retta <b>non</b> è in forma esplicita. Mettiamola in forma esplicita per
+                    osservare il coefficiente angolare.
+                </div>
+                <button id="hintAAAAAAA(2)-button" onclick="showHint(`AAAAAAA(2)`)">Soluzione</button>
+                <div id="hintAAAAAAA(2)" class="hint gray" style="display: none;">
+                    <b class="gray">Soluzione</b>
+                    <br>
+                    Il coefficiente angolare è \(\dfrac{2}{2\color{blue}{}b\color{gray}{} + 1}\).
+                </div>
+            </li>
+            <br>
+            <li>
+                Stabilire il coefficiente angolare ed il termine noto della retta \(s\).
+                <br>
+                <br>
+                <button id="hintAAAAAAA(3)-button" onclick="showHint(`AAAAAAA(3)`)">Soluzione</button>
+                <div id="hintAAAAAAA(3)" class="hint gray" style="display: none;">
+                    <b class="gray">Soluzione</b>
+                    <br>
+                    Il coefficiente angolare è \(-3\color{blue}{}b\color{gray}{} + 2\).
+                </div>
+            </li>
+            <br>
+            <li>
+                Stabilire per quali valori del parametro \(\color{blue}{}b\) le rette \(r\) ed \(s\) sono parallele
+                <br>
+                <br>
+                <button id="hintAAAAAAA(4)-button" onclick="showHint(`AAAAAAA(4)`)">Soluzione</button>
+                <div id="hintAAAAAAA(4)" class="hint gray" style="display: none;">
+                    <b>Soluzione:</b> \(\,\,\,\color{blue}{}b\color{gray}{} = \dfrac{3}{8}\)
+                </div>
+            </li>
+            <br>
+            <li>
+                Stabilire per quali valori del parametro \(\color{blue}{}b\) la retta \(r\) è orizzontale
+                <br>
+                <br>
+                <div class="gray">
+                    <button id="hintAAAAAAA(5)-button" onclick="showHint(`AAAAAAA(5)`)">Soluzione</button>
+                    <div id="hintAAAAAAA(5)" class="hint gray" style="display: none;">
+                        <b>Soluzione:</b> \(\,\,\,\color{blue}{}b\color{gray}{} = -\dfrac{1}{2}\)
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <script src="../../js/hintAndSlide.js"></script>
+
+    <br>
+    <br>
+
+
+</body>
