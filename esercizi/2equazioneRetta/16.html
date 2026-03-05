@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+    <script src="monomialAndPolynomial.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script language="javascript" type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.min.js"></script>
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>Compiti per casa</title>
+</head>
+
+<body>
+    <h1>Compiti per casa</h1>
+
+    <br>
+
+    <h3 class="green">Esercizio</h3>
+    <br>
+    <div>
+        Scrivere l'equazione della retta \(r\) perpendicolare alla retta \(s\) di equazione \(\,\, 6x + 3y + 10 = 0\,\,\) e passante 
+        per il punto di intersezione tra le rette \(t\) e \(l\), aventi le seguenti equazioni.
+        \[
+            \begin{align*}
+                &t:\qquad 6x + 5y - 21 = 0    
+                \\\\
+                &l:\qquad 4x - 2y + 2 = 0
+            \end{align*}        
+        \]
+
+        <br>
+
+        <button id="hintAAAAAAA(1)-button" onclick="showHint(`AAAAAAA(1)`)">Soluzione</button>
+        <div id="hintAAAAAAA(1)" class="hint gray" style="display: none;">     
+            <b class="gray">Soluzione</b> 
+            <br>
+            La retta \(r\) ha equazione 
+            \[
+            y = \dfrac{1}{2}x + \dfrac{5}{2}
+            \]
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+
+    <h3 class="green">Esercizio</h3>
+    <br>
+    <div>
+        Consideriamo il seguente insieme di rette dipendenti da un parametro \(k\):
+        \[
+            (k + 2)x + (2k - 1)y - 3k + 5 = 0
+        \]
+        Stabilire per quale scelta di \(k\) si ottiene la retta \(r\)
+        passante per il punto \(P(1\,,\,\,2)\).
+        <br>
+        Successivamente, trovare l'intersezione tra \(r\) e la retta \(s\), passante per \(A(0\,,\,\,3)\) e \(B(2\,,\,\,1)\).
+        
+        <br>                
+        <br>
+
+        <button id="hintAAAAAAA(2)-button" onclick="showHint(`AAAAAAA(2)`)">Soluzione</button>
+        <div id="hintAAAAAAA(2)" class="hint gray" style="display: none;">     
+            <b class="gray">Soluzione</b> 
+            <br>
+            La retta \(r\) passante per \(P\) si ottiene scegliendo \(k = - \dfrac{5}{2}\) ed ha equazione 
+            \[
+            r: \qquad x + 12y -25 = 0
+            \]
+            La retta \(s\) ha equazione \(x + y - 3 = 0\).
+            <br>
+            L'intersezione tra le due rette è il punto \(P(1\,,\,\,2)\).
+        </div>
+    </div>
+    
+    <script src="../../js/hintAndSlide.js"></script>
+    <script src="script.js"></script>
+
+    <br>
+    <br>
+
+
+</body>
