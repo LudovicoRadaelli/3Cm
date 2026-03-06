@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+    <script src="monomialAndPolynomial.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script language="javascript" type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.min.js"></script>
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>Compiti per casa</title>
+</head>
+
+<body>
+    <h1>Compiti per casa</h1>
+
+    <br>
+
+    <h3 class="green">Esercizio</h3>
+    <br>
+    <div>
+        Consideriamo gli insiemi di rette
+        \[
+        \begin{align*}
+        &r_k:\quad (k^2 - 2)x + 4y + k = 0
+        \\\\
+        &s_k:\quad kx + y + 1 = 0
+        \end{align*}
+        \]
+
+        Stabilire per quale scelta di \(k\) le rette \(r_k\) ed \(s_k\) sono parallele tra
+        di loro.
+
+        <br>
+        <br>
+
+        <button id="hintAAAAAAA(1)-button" onclick="showHint(`AAAAAAA(1)`)">Soluzione</button>
+        <div id="hintAAAAAAA(1)" class="hint gray" style="display: none;">
+            <b class="gray">Soluzione</b>
+            <br>
+            Le rette sono parallele per \(k = 2 \pm \sqrt{6}\)
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+
+    <h3 class="green">Esercizio</h3>
+    <br>
+    <div>
+        Consideriamo il seguente insieme di rette dipendenti da un parametro \(k\):
+        \[
+        r_k:\quad (2k^2 +5k -3)x + (5k - 1)y - 3 + k = 0
+        \]
+        Stabilire per quali scelte di \(k\) si ottengono rette decrescenti.
+
+        <br>
+        <br>
+
+        <div class="gray">
+            <b>Suggermento</b>
+            <br>
+            Ricordate, una retta è crescente se il suo coefficiente angolare è ...,
+            mentre è decrescente se il suo coefficiente angolare è ....
+        </div>
+
+        <br>
+
+        <button id="hintAAAAAAA(2)-button" onclick="showHint(`AAAAAAA(2)`)">Soluzione</button>
+        <div id="hintAAAAAAA(2)" class="hint gray" style="display: none;">
+            <b class="gray">Soluzione</b>
+            <br>
+            Le rette \(r_k\) sono decrescenti se
+            \[
+            k \in \left(-3\,,\,\,\dfrac{1}{5}\right) \cup \left(\dfrac{1}{2}\,,\,\,+\infty\right)
+            \]
+
+            Per arrivare alla soluzione si deve risolvere una <b>disequazione fratta</b>. Se non ricordate
+            come farlo, <a href="https://ludovicoradaelli.github.io/3Cm/esercizi/1fondamenti/12.html">QUI</a> il
+            materiale di ripasso.
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+
+    <h3 class="green">Esercizio</h3>
+    <br>
+    <div>
+        Consideriamo la retta \(r\) passante per \(P(7\,,\,\,-1)\) e \(Q(5\,,\,\,3)\).
+        Stabilire l'equazione della retta \(s\) perpendicolare ad \(r\) e passante
+        per il punto \(A\) di intersezione tra le rette
+        \[
+        \begin{align*}
+        t:\quad 3x - 5y - 1 = 0
+        \\\\
+        l:\quad 7x - 4y - 10 = 0
+        \end{align*}
+        \]
+
+        <br>
+
+        <button id="hintAAAAAAA(3)-button" onclick="showHint(`AAAAAAA(3)`)">Soluzione</button>
+        <div id="hintAAAAAAA(3)" class="hint gray" style="display: none;">
+            <b class="gray">Soluzione</b>
+            <br>
+            L'equazione della retta \(s\) è \(y = \dfrac{1}{2}x\).
+            <br>            
+        </div>
+
+    </div>
+
+
+
+    <script src="../../js/hintAndSlide.js"></script>
+    <script src="script.js"></script>
+
+    <br>
+    <br>
+
+
+</body>
