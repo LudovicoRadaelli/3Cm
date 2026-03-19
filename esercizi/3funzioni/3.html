@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script language="javascript" type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.min.js"></script> 
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/balloon-css/balloon.min.css">
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+    <title>Compiti per casa</title>
+</head>
+<body>
+    <h1>Compiti per casa</h1>
+    
+    <br>        
+
+    <h3 class="green">Esercizio</h3>
+    <br>
+    <div>
+        Il fenomeno dell'introduzione di una nuova tecnologia sul mercato presenta dei tratti 
+        ricorrenti. 
+        <br>
+        <br>
+        Pensiamo a ChatGPT: nei primi tempi una bassissima percentuale della popolazione la utilizzava. 
+        <br>
+        Con il passare dei mesi la percentuale è gradualmente cresciuta, fino ad un momento in cui l'applicazione è diventata 
+        virale e si ha avuto un rapidissimo incremento di utenti.
+        <br>
+        <br>
+        Consideriamo la funzione 
+        \[
+            f(x) = \dfrac{60}{1 + 3^{^{6 - x}}}
+        \]
+        che lega la percentuale \(y\) della popolazione che utilizza ChatGPT al tempo \(x\) trascorso
+        dalla sua introduzione sul mercato (misurato in mesi).
+        <br>
+        <br>
+        Ad esempio, secondo questo modello dopo \(1\) mese, circa lo \(0.24%\) della popolazione utilizzava ChatGPT. Infatti 
+        \[
+            f(1) = \dfrac{60}{1 + 3^{^{6 - 1}}} = \dfrac{60}{244} \approx 0.24%
+        \]
+
+        <br>
+
+        <ol type="A" style="font-weight: bold;">
+            <li>
+                <span style="font-weight: normal;">
+                    Calcolare \(f(3)\), \(f(4)\). 
+                </span>
+            </li>
+            <br>
+            <li>
+                <span style="font-weight: normal;">
+                    Qual è l'incremento di percentuale di utenti dal mese \(3\) al mese \(4\)?
+                </span>
+            </li>
+            <br>
+            <li>
+                <span style="font-weight: normal;">
+                    Consideriamo l'arco di tempo che va dal mese \(3\) al mese \(5\).                 
+                    <br>
+                    Qual è l'incremento della percentuale di utenti relativo a questo periodo?
+                </span>
+            </li>
+            <br>
+            <li>
+                <span style="font-weight: normal;">
+                    Dopo quanti mesi la percentuale di utenti è del \(45%\)?
+                </span>
+            </li>
+            <br>
+            <li>
+                <span style="font-weight: normal;">
+                Quale è la percentuale di utenti dopo \(3\) anni?
+                </span>
+            </li>
+        </ol>        
+    </div>
+
+    <br>
+    <br>
+
+    Consideriamo il grafico della funzione \(f\), rappresentato nella seguente figura
+    <br>
+    <br>
+    
+    <img src="img/3(1).png" alt="">
+
+    <br>
+    <br>
+    <ul>
+        <li>
+            Dopo quanti mesi la percentuale di utenti supera il \(55%\)?
+        </li>
+        <br>
+        <li>
+            Dopo quanti mesi la percentuale di utenti supera il \(65%\)?
+        </li>
+        <br>
+        <li>
+            La variazione della percentuale di utenti tra il mesi \(5\) ed \(11\) è maggiore del \(50%\).
+        </li>
+        <br>
+        <li>
+            &Eacute; vero che \(f(6) = 30\)?
+        </li>
+    </ul>
+
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+
+
+    <h3 class="green">Esercizio</h3>
+    <br>
+    <div>
+        Consideriamo l'insieme di rette
+        \[
+            r_k:\quad (-4k - 1)x + (-2k^2 -3k + 5)y + 5k = 0
+        \]
+        Stabilire per quali scelte di \(k\) si ottengono rette decrescenti.
+        
+        <br>
+        <br>
+
+        <button id="hintAAAAAAA(1)-button" onclick="showHint(`AAAAAAA(1)`)">Soluzione</button>
+        <div id="hintAAAAAAA(1)" class="hint gray" style="display: none;">     
+            <b class="gray">Soluzione</b> 
+            <br>
+            <br>
+            Le rette \(r_k\) sono decrescenti per 
+            \[
+             k\in \left(-\dfrac{5}{2}\,,\,\,-\dfrac{1}{4}\right) \cup (1\,,\,\,+\infty)
+            \]
+        </div>
+    </div>
+
+    <br>
+    <br>
+
+    <script src="../../js/hintAndSlide.js"></script>
+    
+</body>
