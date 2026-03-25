@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script language="javascript" type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.min.js"></script>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/balloon-css/balloon.min.css">
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+    <title>Compiti per casa</title>
+</head>
+
+<body>
+    <h1>Compiti per casa</h1>
+
+    <br>
+
+
+    <h3 class="yellow">Definizione di funzione</h3>
+    <div class="esempi-container">
+        <div class="grayBackground">
+            Una funzione è una legge che mette in relazione due quantità in modo da associare ad
+            ogni input uno e un solo output.
+        </div>
+
+        <br>
+
+
+        <b class="gray">Esempio 1</b>
+        <br>
+        <div class="grayBorder">
+            <nobr>Un negozio vende sapone liquido sfuso a \(6\) &euro;</nobr> al litro più il costo del recipiente, pari
+            a
+            \(1\) &euro;.
+            <br>
+            Indichiamo con
+            <br>
+            <br>
+            <ul>
+                <li>
+                    \(\color{blue}{x}\) il quantitativo di sapone acquistato (espresso in litri)
+                </li>
+                <br>
+                <li>
+                    \(\color{red}{y}\) il prezzo che il cliente deve pagare.
+                </li>
+            </ul>
+            <br>
+            La relazione che lega \(\color{blue}{x}\) ed \(\color{red}{y}\) è la seguente:
+            \[
+            \color{red}{y} \color{black}{} = 6 \cdot \color{blue}{x} \color{black}{}+ 1
+            \]
+            Saputo \(\color{blue}{x}\), il quantitativo di sapone acquistato, la formula ci permette di determinare
+            l'importo \(\color{red}{y}\) dovuto
+            dal cliente. In altre parole abbiamo espresso la quantità \(\color{red}{y}\,\,\) <b><u>in funzione</u></b>
+            della
+            quantità \(\color{blue}{x}\).
+            <br>
+            <br>
+            Ad esempio, se \(\color{blue}{x} \color{black}{} = \color{blue}{2}\), allora
+            \[
+            \begin{align*}
+            \color{red}{y} \color{black}{} &= 6 \cdot \color{blue}{2} \color{black}{} + 1 = \\
+            &= 12 + 1 = \\
+            &= \color{red}{13}
+            \end{align*}
+            \]
+            ovvero per \(\color{blue}{2}\) litri di sapone il cliente paga \(\color{red}{13}\) &euro;
+        </div>
+
+
+        <br>
+        <br>
+
+        <b class="gray">Esempio 2</b>
+        <br>
+        <div class="grayBorder">
+            Un gruppo di amici decide di acquistare un tavolo da ping pong del costo di \(300\) &euro;.
+            <br>
+            Indichiamo con
+            <br>
+            <br>
+            <ul>
+                <li>
+                    \(n\) il numero di partecipanti all'acquisto,
+                </li>
+                <br>
+                <li>
+                    \(Q\) la quota con la quale ciascuno contribuisce all'acquisto
+                    del tavolo.
+                </li>
+            </ul>
+            <br>
+            Queste due quantità sono legate dalla legge
+            \[
+            Q = \dfrac{300}{n}
+            \]
+            Diremo che \(Q\) è espressa <b>in funzione di</b> \(n\) attraverso la legge sopra scritta.
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+
+    <h3 class="yellow">Legge analitica di una funzione</h3>
+    <div class="esempi-container">
+        Possiamo pensare una funzione come la lista di infinite associazioni tra
+        input ed output.
+        Vediamo l'esempio mostrato nel seguente video.
+
+        <br>
+        <br>
+        <iframe style="width: 100%; border: solid gray 0.01rem;"
+            src="https://www.youtube.com/embed/r0hROcLpTLA?si=2ivy2JOCrM0ap_tj" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <br>
+        <br>
+
+        Ad ogni input \(x\) che viene inserito, la funzione restituisce l'output corrispondente.
+        Possiamo chiederci: esiste una serie di operazioni che ci permettono di ottenere l'output
+        a partire dall'input?
+        Guardiamo la tabella input/output della funzione mostrata nel video.
+        <br>
+        <br>
+        <div style="max-height: 30vh; overflow-y: scroll;">
+            <table>
+                <tr>
+                    <th>input x</th>
+                    <th>output y</th>
+                </tr>
+                <tr>
+                    <td>\(1\)</td>
+                    <td>\(5\)</td>
+                </tr>
+                <tr>
+                    <td>\(2\)</td>
+                    <td>\(7\)</td>
+                </tr>
+                <tr>
+                    <td>\(3\)</td>
+                    <td>\(9\)</td>
+                </tr>
+                <tr>
+                    <td>\(4\)</td>
+                    <td>\(11\)</td>
+                </tr>
+                <tr>
+                    <td>\(1.2\)</td>
+                    <td>\(3.4\)</td>
+                </tr>
+                <tr>
+                    <td>\(10\)</td>
+                    <td>\(23\)</td>
+                </tr>
+                <tr>
+                    <td>\(-2\)</td>
+                    <td>\(-1\)</td>
+                </tr>
+                <tr>
+                    <td>\(\dfrac{2}{3}\)</td>
+                    <td>\(2.\bar{3}\)</td>
+                </tr>
+                <tr>
+                    <td>\(-0.2\)</td>
+                    <td>\(2.6\)</td>
+                </tr>
+                <tr>
+                    <td>\(\cdots\)</td>
+                    <td>\(\cdots\)</td>
+                </tr>
+            </table>
+        </div>
+
+        <br>
+        <br>
+        A pensarci bene, ogni output si ottiene raddoppiando l'input ed aggiungendo \(3\) al risultato.
+        Diremo che la <b>legge analitica</b> che definisce la funzione è
+        \[
+        f(x) = 2x + 3
+        \]
+        dove \(f(x)\) si legge <i>"f di \(x\)"</i>.
+        Possiamo dire che
+        <br>
+        <br>
+        <div class="grayBackground">
+            La <b>legge analitica</b> di una funzione è l'insieme di operazioni che permettono di
+            calcolare l'output di una funzione a partire dall'input.
+        </div>
+        <br>
+        <hr>
+        <br>
+        Osserviamo che non sempre una funzione ammette legge analitica.
+        <br>
+        Consideriamo ad esempio la funzione \(f\) che associa a ciascun giorno di scuola il numero di
+        presenti in una classe.
+        <br>
+        <br>
+
+        <div style="max-height: 30vh; overflow-y: scroll;">
+            <table>
+                <tr>
+                    <th>input x</th>
+                    <th>output y</th>
+                </tr>
+                <tr>
+                    <td>\(1\)</td>
+                    <td>\(4\)</td>
+                </tr>
+                <tr>
+                    <td>\(2\)</td>
+                    <td>\(5\)</td>
+                </tr>
+                <tr>
+                    <td>\(3\)</td>
+                    <td>\(9\)</td>
+                </tr>
+                <tr>
+                    <td>\(4\)</td>
+                    <td>\(18\)</td>
+                </tr>
+                <tr>
+                    <td>\(5\)</td>
+                    <td>\(1\)</td>
+                </tr>
+                <tr>
+                    <td>\(6\)</td>
+                    <td>\(17\)</td>
+                </tr>
+                <tr>
+                    <td>\(7\)</td>
+                    <td>\(5\)</td>
+                </tr>
+                <tr>
+                    <td>\(8\)</td>
+                    <td>\(23\)</td>
+                </tr>
+                <tr>
+                    <td>\(9\)</td>
+                    <td>\(21\)</td>
+                </tr>
+                <tr>
+                    <td>\(10\)</td>
+                    <td>\(1\)</td>
+                </tr>
+                <tr>
+                    <td>\(11\)</td>
+                    <td>\(24\)</td>
+                </tr>
+                <tr>
+                    <td>\(12\)</td>
+                    <td>\(3\)</td>
+                </tr>
+                <tr>
+                    <td>\(13\)</td>
+                    <td>\(0\)</td>
+                </tr>
+                <tr>
+                    <td>\(14\)</td>
+                    <td>\(1\)</td>
+                </tr>
+                <tr>
+                    <td>\(15\)</td>
+                    <td>\(5\)</td>
+                </tr>
+                <tr>
+                    <td>\(16\)</td>
+                    <td>\(7\)</td>
+                </tr>
+                <tr>
+                    <td>\(17\)</td>
+                    <td>\(11\)</td>
+                </tr>
+                <tr>
+                    <td>\(18\)</td>
+                    <td>\(26\)</td>
+                </tr>
+                <tr>
+                    <td>\(19\)</td>
+                    <td>\(5\)</td>
+                </tr>
+                <tr>
+                    <td>\(20\)</td>
+                    <td>\(12\)</td>
+                </tr>
+                <tr>
+                    <td>\(21\)</td>
+                    <td>\(15\)</td>
+                </tr>
+                <tr>
+                    <td>\(22\)</td>
+                    <td>\(2\)</td>
+                </tr>
+                <tr>
+                    <td>\(23\)</td>
+                    <td>\(23\)</td>
+                </tr>
+                <tr>
+                    <td>\(24\)</td>
+                    <td>\(6\)</td>
+                </tr>
+                <tr>
+                    <td>\(25\)</td>
+                    <td>\(22\)</td>
+                </tr>
+                <tr>
+                    <td>\(26\)</td>
+                    <td>\(14\)</td>
+                </tr>
+                <tr>
+                    <td>\(27\)</td>
+                    <td>\(15\)</td>
+                </tr>
+                <tr>
+                    <td>\(28\)</td>
+                    <td>\(4\)</td>
+                </tr>
+                <tr>
+                    <td>\(29\)</td>
+                    <td>\(9\)</td>
+                </tr>
+                <tr>
+                    <td>\(30\)</td>
+                    <td>\(25\)</td>
+                </tr>
+                <tr>
+                    <td>\(31\)</td>
+                    <td>\(19\)</td>
+                </tr>
+                <tr>
+                    <td>\(32\)</td>
+                    <td>\(2\)</td>
+                </tr>
+                <tr>
+                    <td>\(33\)</td>
+                    <td>\(20\)</td>
+                </tr>
+                <tr>
+                    <td>\(34\)</td>
+                    <td>\(20\)</td>
+                </tr>
+                <tr>
+                    <td>\(35\)</td>
+                    <td>\(16\)</td>
+                </tr>
+                <tr>
+                    <td>\(36\)</td>
+                    <td>\(14\)</td>
+                </tr>
+                <tr>
+                    <td>\(37\)</td>
+                    <td>\(11\)</td>
+                </tr>
+                <tr>
+                    <td>\(38\)</td>
+                    <td>\(21\)</td>
+                </tr>
+                <tr>
+                    <td>\(39\)</td>
+                    <td>\(15\)</td>
+                </tr>
+                <tr>
+                    <td>\(40\)</td>
+                    <td>\(16\)</td>
+                </tr>
+                <tr>
+                    <td>\(41\)</td>
+                    <td>\(21\)</td>
+                </tr>
+                <tr>
+                    <td>\(42\)</td>
+                    <td>\(21\)</td>
+                </tr>
+                <tr>
+                    <td>\(43\)</td>
+                    <td>\(18\)</td>
+                </tr>
+                <tr>
+                    <td>\(44\)</td>
+                    <td>\(16\)</td>
+                </tr>
+                <tr>
+                    <td>\(45\)</td>
+                    <td>\(18\)</td>
+                </tr>
+                <tr>
+                    <td>\(46\)</td>
+                    <td>\(20\)</td>
+                </tr>
+                <tr>
+                    <td>\(47\)</td>
+                    <td>\(22\)</td>
+                </tr>
+                <tr>
+                    <td>\(48\)</td>
+                    <td>\(5\)</td>
+                </tr>
+                <tr>
+                    <td>\(49\)</td>
+                    <td>\(10\)</td>
+                </tr>
+                <tr>
+                    <td>\(50\)</td>
+                    <td>\(1\)</td>
+                </tr>
+                <tr>
+                    <td>\(51\)</td>
+                    <td>\(18\)</td>
+                </tr>
+                <tr>
+                    <td>\(52\)</td>
+                    <td>\(8\)</td>
+                </tr>
+                <tr>
+                    <td>\(53\)</td>
+                    <td>\(21\)</td>
+                </tr>
+                <tr>
+                    <td>\(54\)</td>
+                    <td>\(12\)</td>
+                </tr>
+                <tr>
+                    <td>\(55\)</td>
+                    <td>\(2\)</td>
+                </tr>
+                <tr>
+                    <td>\(56\)</td>
+                    <td>\(22\)</td>
+                </tr>
+                <tr>
+                    <td>\(57\)</td>
+                    <td>\(8\)</td>
+                </tr>
+                <tr>
+                    <td>\(58\)</td>
+                    <td>\(4\)</td>
+                </tr>
+                <tr>
+                    <td>\(59\)</td>
+                    <td>\(24\)</td>
+                </tr>
+                <tr>
+                    <td>\(60\)</td>
+                    <td>\(7\)</td>
+                </tr>
+                <tr>
+                    <td>\(61\)</td>
+                    <td>\(4\)</td>
+                </tr>
+                <tr>
+                    <td>\(62\)</td>
+                    <td>\(24\)</td>
+                </tr>
+                <tr>
+                    <td>\(63\)</td>
+                    <td>\(23\)</td>
+                </tr>
+                <tr>
+                    <td>\(64\)</td>
+                    <td>\(20\)</td>
+                </tr>
+                <tr>
+                    <td>\(65\)</td>
+                    <td>\(9\)</td>
+                </tr>
+                <tr>
+                    <td>\(66\)</td>
+                    <td>\(22\)</td>
+                </tr>
+                <tr>
+                    <td>\(67\)</td>
+                    <td>\(16\)</td>
+                </tr>
+                <tr>
+                    <td>\(68\)</td>
+                    <td>\(18\)</td>
+                </tr>
+                <tr>
+                    <td>\(69\)</td>
+                    <td>\(15\)</td>
+                </tr>
+                <tr>
+                    <td>\(70\)</td>
+                    <td>\(2\)</td>
+                </tr>
+                <tr>
+                    <td>\(71\)</td>
+                    <td>\(13\)</td>
+                </tr>
+                <tr>
+                    <td>\(72\)</td>
+                    <td>\(19\)</td>
+                </tr>
+                <tr>
+                    <td>\(73\)</td>
+                    <td>\(1\)</td>
+                </tr>
+                <tr>
+                    <td>\(74\)</td>
+                    <td>\(20\)</td>
+                </tr>
+                <tr>
+                    <td>\(75\)</td>
+                    <td>\(20\)</td>
+                </tr>
+                <tr>
+                    <td>\(76\)</td>
+                    <td>\(2\)</td>
+                </tr>
+                <tr>
+                    <td>\(77\)</td>
+                    <td>\(11\)</td>
+                </tr>
+                <tr>
+                    <td>\(78\)</td>
+                    <td>\(8\)</td>
+                </tr>
+                <tr>
+                    <td>\(79\)</td>
+                    <td>\(26\)</td>
+                </tr>
+                <tr>
+                    <td>\(80\)</td>
+                    <td>\(4\)</td>
+                </tr>
+                <tr>
+                    <td>\(81\)</td>
+                    <td>\(8\)</td>
+                </tr>
+                <tr>
+                    <td>\(82\)</td>
+                    <td>\(11\)</td>
+                </tr>
+                <tr>
+                    <td>\(83\)</td>
+                    <td>\(17\)</td>
+                </tr>
+                <tr>
+                    <td>\(84\)</td>
+                    <td>\(21\)</td>
+                </tr>
+                <tr>
+                    <td>\(85\)</td>
+                    <td>\(25\)</td>
+                </tr>
+                <tr>
+                    <td>\(86\)</td>
+                    <td>\(9\)</td>
+                </tr>
+                <tr>
+                    <td>\(87\)</td>
+                    <td>\(12\)</td>
+                </tr>
+                <tr>
+                    <td>\(88\)</td>
+                    <td>\(5\)</td>
+                </tr>
+                <tr>
+                    <td>\(89\)</td>
+                    <td>\(24\)</td>
+                </tr>
+                <tr>
+                    <td>\(90\)</td>
+                    <td>\(25\)</td>
+                </tr>
+                <tr>
+                    <td>\(91\)</td>
+                    <td>\(7\)</td>
+                </tr>
+                <tr>
+                    <td>\(92\)</td>
+                    <td>\(17\)</td>
+                </tr>
+                <tr>
+                    <td>\(93\)</td>
+                    <td>\(23\)</td>
+                </tr>
+                <tr>
+                    <td>\(94\)</td>
+                    <td>\(0\)</td>
+                </tr>
+                <tr>
+                    <td>\(95\)</td>
+                    <td>\(4\)</td>
+                </tr>
+                <tr>
+                    <td>\(96\)</td>
+                    <td>\(15\)</td>
+                </tr>
+                <tr>
+                    <td>\(97\)</td>
+                    <td>\(1\)</td>
+                </tr>
+                <tr>
+                    <td>\(98\)</td>
+                    <td>\(25\)</td>
+                </tr>
+                <tr>
+                    <td>\(99\)</td>
+                    <td>\(6\)</td>
+                </tr>
+                <tr>
+                    <td>\(100\)</td>
+                    <td>\(5\)</td>
+                </tr>
+                <tr>
+                    <td>\(101\)</td>
+                    <td>\(18\)</td>
+                </tr>
+                <tr>
+                    <td>\(102\)</td>
+                    <td>\(8\)</td>
+                </tr>
+                <tr>
+                    <td>\(103\)</td>
+                    <td>\(4\)</td>
+                </tr>
+                <tr>
+                    <td>\(104\)</td>
+                    <td>\(18\)</td>
+                </tr>
+                <tr>
+                    <td>\(105\)</td>
+                    <td>\(20\)</td>
+                </tr>
+                <tr>
+                    <td>\(106\)</td>
+                    <td>\(16\)</td>
+                </tr>
+                <tr>
+                    <td>\(107\)</td>
+                    <td>\(11\)</td>
+                </tr>
+                <tr>
+                    <td>\(108\)</td>
+                    <td>\(18\)</td>
+                </tr>
+                <tr>
+                    <td>\(109\)</td>
+                    <td>\(16\)</td>
+                </tr>
+                <tr>
+                    <td>\(110\)</td>
+                    <td>\(5\)</td>
+                </tr>
+                <tr>
+                    <td>\(111\)</td>
+                    <td>\(15\)</td>
+                </tr>
+                <tr>
+                    <td>\(112\)</td>
+                    <td>\(9\)</td>
+                </tr>
+                <tr>
+                    <td>\(113\)</td>
+                    <td>\(11\)</td>
+                </tr>
+                <tr>
+                    <td>\(114\)</td>
+                    <td>\(3\)</td>
+                </tr>
+                <tr>
+                    <td>\(115\)</td>
+                    <td>\(10\)</td>
+                </tr>
+                <tr>
+                    <td>\(116\)</td>
+                    <td>\(13\)</td>
+                </tr>
+                <tr>
+                    <td>\(117\)</td>
+                    <td>\(7\)</td>
+                </tr>
+                <tr>
+                    <td>\(118\)</td>
+                    <td>\(5\)</td>
+                </tr>
+                <tr>
+                    <td>\(119\)</td>
+                    <td>\(20\)</td>
+                </tr>
+                <tr>
+                    <td>\(120\)</td>
+                    <td>\(0\)</td>
+                </tr>
+                <tr>
+                    <td>\(121\)</td>
+                    <td>\(17\)</td>
+                </tr>
+                <tr>
+                    <td>\(122\)</td>
+                    <td>\(25\)</td>
+                </tr>
+                <tr>
+                    <td>\(123\)</td>
+                    <td>\(26\)</td>
+                </tr>
+                <tr>
+                    <td>\(124\)</td>
+                    <td>\(9\)</td>
+                </tr>
+                <tr>
+                    <td>\(125\)</td>
+                    <td>\(7\)</td>
+                </tr>
+                <tr>
+                    <td>\(126\)</td>
+                    <td>\(21\)</td>
+                </tr>
+                <tr>
+                    <td>\(127\)</td>
+                    <td>\(14\)</td>
+                </tr>
+                <tr>
+                    <td>\(128\)</td>
+                    <td>\(3\)</td>
+                </tr>
+                <tr>
+                    <td>\(129\)</td>
+                    <td>\(9\)</td>
+                </tr>
+                <tr>
+                    <td>\(130\)</td>
+                    <td>\(11\)</td>
+                </tr>
+                <tr>
+                    <td>\(131\)</td>
+                    <td>\(3\)</td>
+                </tr>
+                <tr>
+                    <td>\(132\)</td>
+                    <td>\(3\)</td>
+                </tr>
+                <tr>
+                    <td>\(133\)</td>
+                    <td>\(10\)</td>
+                </tr>
+                <tr>
+                    <td>\(134\)</td>
+                    <td>\(4\)</td>
+                </tr>
+                <tr>
+                    <td>\(135\)</td>
+                    <td>\(10\)</td>
+                </tr>
+                <tr>
+                    <td>\(136\)</td>
+                    <td>\(2\)</td>
+                </tr>
+                <tr>
+                    <td>\(137\)</td>
+                    <td>\(11\)</td>
+                </tr>
+                <tr>
+                    <td>\(138\)</td>
+                    <td>\(23\)</td>
+                </tr>
+                <tr>
+                    <td>\(139\)</td>
+                    <td>\(26\)</td>
+                </tr>
+                <tr>
+                    <td>\(140\)</td>
+                    <td>\(21\)</td>
+                </tr>
+                <tr>
+                    <td>\(141\)</td>
+                    <td>\(8\)</td>
+                </tr>
+                <tr>
+                    <td>\(142\)</td>
+                    <td>\(0\)</td>
+                </tr>
+                <tr>
+                    <td>\(143\)</td>
+                    <td>\(7\)</td>
+                </tr>
+                <tr>
+                    <td>\(144\)</td>
+                    <td>\(20\)</td>
+                </tr>
+                <tr>
+                    <td>\(145\)</td>
+                    <td>\(13\)</td>
+                </tr>
+                <tr>
+                    <td>\(146\)</td>
+                    <td>\(24\)</td>
+                </tr>
+                <tr>
+                    <td>\(147\)</td>
+                    <td>\(17\)</td>
+                </tr>
+                <tr>
+                    <td>\(148\)</td>
+                    <td>\(12\)</td>
+                </tr>
+                <tr>
+                    <td>\(149\)</td>
+                    <td>\(24\)</td>
+                </tr>
+                <tr>
+                    <td>\(150\)</td>
+                    <td>\(4\)</td>
+                </tr>
+                <tr>
+                    <td>\(151\)</td>
+                    <td>\(24\)</td>
+                </tr>
+                <tr>
+                    <td>\(152\)</td>
+                    <td>\(6\)</td>
+                </tr>
+                <tr>
+                    <td>\(153\)</td>
+                    <td>\(24\)</td>
+                </tr>
+                <tr>
+                    <td>\(154\)</td>
+                    <td>\(4\)</td>
+                </tr>
+                <tr>
+                    <td>\(155\)</td>
+                    <td>\(6\)</td>
+                </tr>
+                <tr>
+                    <td>\(156\)</td>
+                    <td>\(24\)</td>
+                </tr>
+                <tr>
+                    <td>\(157\)</td>
+                    <td>\(8\)</td>
+                </tr>
+                <tr>
+                    <td>\(158\)</td>
+                    <td>\(13\)</td>
+                </tr>
+                <tr>
+                    <td>\(159\)</td>
+                    <td>\(23\)</td>
+                </tr>
+                <tr>
+                    <td>\(160\)</td>
+                    <td>\(22\)</td>
+                </tr>
+                <tr>
+                    <td>\(161\)</td>
+                    <td>\(2\)</td>
+                </tr>
+                <tr>
+                    <td>\(162\)</td>
+                    <td>\(14\)</td>
+                </tr>
+                <tr>
+                    <td>\(163\)</td>
+                    <td>\(25\)</td>
+                </tr>
+                <tr>
+                    <td>\(164\)</td>
+                    <td>\(1\)</td>
+                </tr>
+                <tr>
+                    <td>\(165\)</td>
+                    <td>\(17\)</td>
+                </tr>
+                <tr>
+                    <td>\(166\)</td>
+                    <td>\(23\)</td>
+                </tr>
+                <tr>
+                    <td>\(167\)</td>
+                    <td>\(20\)</td>
+                </tr>
+                <tr>
+                    <td>\(168\)</td>
+                    <td>\(1\)</td>
+                </tr>
+                <tr>
+                    <td>\(169\)</td>
+                    <td>\(21\)</td>
+                </tr>
+                <tr>
+                    <td>\(170\)</td>
+                    <td>\(13\)</td>
+                </tr>
+                <tr>
+                    <td>\(171\)</td>
+                    <td>\(16\)</td>
+                </tr>
+                <tr>
+                    <td>\(172\)</td>
+                    <td>\(0\)</td>
+                </tr>
+                <tr>
+                    <td>\(173\)</td>
+                    <td>\(25\)</td>
+                </tr>
+                <tr>
+                    <td>\(174\)</td>
+                    <td>\(10\)</td>
+                </tr>
+                <tr>
+                    <td>\(175\)</td>
+                    <td>\(11\)</td>
+                </tr>
+                <tr>
+                    <td>\(176\)</td>
+                    <td>\(22\)</td>
+                </tr>
+                <tr>
+                    <td>\(177\)</td>
+                    <td>\(10\)</td>
+                </tr>
+                <tr>
+                    <td>\(178\)</td>
+                    <td>\(26\)</td>
+                </tr>
+                <tr>
+                    <td>\(179\)</td>
+                    <td>\(14\)</td>
+                </tr>
+                <tr>
+                    <td>\(180\)</td>
+                    <td>\(6\)</td>
+                </tr>
+                <tr>
+                    <td>\(181\)</td>
+                    <td>\(17\)</td>
+                </tr>
+                <tr>
+                    <td>\(182\)</td>
+                    <td>\(25\)</td>
+                </tr>
+                <tr>
+                    <td>\(183\)</td>
+                    <td>\(5\)</td>
+                </tr>
+                <tr>
+                    <td>\(184\)</td>
+                    <td>\(17\)</td>
+                </tr>
+                <tr>
+                    <td>\(185\)</td>
+                    <td>\(5\)</td>
+                </tr>
+                <tr>
+                    <td>\(186\)</td>
+                    <td>\(13\)</td>
+                </tr>
+                <tr>
+                    <td>\(187\)</td>
+                    <td>\(14\)</td>
+                </tr>
+                <tr>
+                    <td>\(188\)</td>
+                    <td>\(12\)</td>
+                </tr>
+                <tr>
+                    <td>\(189\)</td>
+                    <td>\(18\)</td>
+                </tr>
+                <tr>
+                    <td>\(190\)</td>
+                    <td>\(11\)</td>
+                </tr>
+                <tr>
+                    <td>\(191\)</td>
+                    <td>\(22\)</td>
+                </tr>
+                <tr>
+                    <td>\(192\)</td>
+                    <td>\(24\)</td>
+                </tr>
+                <tr>
+                    <td>\(193\)</td>
+                    <td>\(7\)</td>
+                </tr>
+                <tr>
+                    <td>\(194\)</td>
+                    <td>\(25\)</td>
+                </tr>
+                <tr>
+                    <td>\(195\)</td>
+                    <td>\(16\)</td>
+                </tr>
+                <tr>
+                    <td>\(196\)</td>
+                    <td>\(15\)</td>
+                </tr>
+                <tr>
+                    <td>\(197\)</td>
+                    <td>\(15\)</td>
+                </tr>
+                <tr>
+                    <td>\(198\)</td>
+                    <td>\(24\)</td>
+                </tr>
+                <tr>
+                    <td>\(199\)</td>
+                    <td>\(13\)</td>
+                </tr>
+                <tr>
+                    <td>\(200\)</td>
+                    <td>\(13\)</td>
+                </tr>
+            </table>
+        </div>
+
+        <br>
+        <br>
+
+        Questa è senz'altro una funzione. &Eacute; difficile immaginare che esista un legame determinato
+        tra il giorno \(x\) ed il numero di presenti in quel giorno, \(f(x)\). In questo caso la funzione \(f\)
+        <b>non</b> ammette
+        legge analitica.
+
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <h3 class="yellow">Grafico di una funzione</h3>
+    <div class="esempi-container">
+        <div class="grayBackground">
+            Il <b>grafico</b> di una funzione \(f\) è l'insieme di tutti i punti della forma
+            \(\left(x\,;\,\,f(x)\right)\).
+        </div>
+        <br>
+
+        In altre parole, se prendiamo un punto qualsiasi del grafico, la sua coordinata \(x\) è uno degli input della
+        funzione,
+        mentre la coordinata \(y\) indica l'output corrispondente.
+        <br>
+        <br>
+        <div class="geogebra-container">
+            <div id="geogebra1"></div>
+        </div>
+        <span style="font-size: 1rem; color: gray;">Trascinate il punto blu per vedere
+            quali sono le coppie di input/output associati da questa funzione.
+        </span>
+
+        <script>
+            let ggbApp1 = new GGBApplet({
+                "appName": "classic",
+                "id": "gg1",
+                "scaleContainerClass": "geogebra-container",
+                "showToolBar": false,
+                "showAlgebraInput": false,
+                "showMenuBar": false,
+                "enableShiftDragZoom": false,
+                "filename": "img/graficoFunzione.ggb"
+            },
+                true);
+
+            window.addEventListener("load", function () {
+                ggbApp1.inject('geogebra1');
+            });
+        </script>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+
+    <h3 class="green">Esercizio</h3>
+    <br>
+    <div>
+        Consideriamo la funzione
+        \[
+        f(x) = \dfrac{2x - 1}{4x + 5}
+        \]
+        <ol type="A" style="font-weight: bold;">
+            <li>
+                <span style="font-weight: normal;">
+                    Calcolare \(f(5)\).
+                </span>
+                <br>
+                <br>
+                <div class="gray">
+                    <b>Soluzione:</b> \(\,\, f(5) = \dfrac{9}{25}\)
+                </div>
+            </li>
+            <br>
+            <li>
+                <span style="font-weight: normal;">
+                    Qual è la variazione della funzione da \(x = -1\) a \(x = 1\)
+                </span>
+                <br>
+                <br>
+                <div class="gray">
+                    <b>Soluzione:</b> \(\,\, \dfrac{28}{9}\)
+                </div>
+            </li>
+            <br>
+            <li>
+                <span style="font-weight: normal;">
+                    Per quale valori della \(x\) la funzione assume valore \(-2\)
+                </span>
+                <br>
+                <br>
+                <div class="gray">
+                    <b>Soluzione:</b> \(\,\, x = -\dfrac{9}{10}\)
+                </div>
+            </li>
+            <br>
+            <li>
+                <span style="font-weight: normal;">
+                    Per quali valori della \(x\) la funzione assume valori positivi?
+                </span>
+                <br>
+                <br>
+                <div class="gray">
+                    <b>Soluzione:</b>\(\,\, x \lt -\dfrac{5}{4}\,\,\) oppure \(\,\, x \gt \dfrac{1}{2}\)
+                </div>
+            </li>
+            <br>
+            <li>
+                <span style="font-weight: normal;">
+                    Consideriamo la funzione \(g(x) = 2x - 1\). Per quali valori di \(x\) la funzione \(f\) e la
+                    funzione \(g\)
+                    assumono lo stesso valore?
+                </span>
+                <br>
+                <br>
+                <div class="gray">
+                    <b>Soluzione:</b> Le funzioni assumono lo stesso valore per \(\,\,x = -1\,\,\) oppure \(\,\,x =
+                    \dfrac{1}{2}\)
+                </div>
+            </li>
+        </ol>
+    </div>
+
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+
+    <h3 class="green">Esercizio</h3>
+    <br>
+    <div>
+        Consideriamo la funzione \(f\) avente il seguente grafico.
+        <br>
+        <br>
+        <img src="img/4(1).png" alt="">
+        <br>
+        <ol type="A" style="font-weight: bold;">
+            <li>
+                <span style="font-weight: normal;">
+                    Quanto vale \(f(-1)\)?
+                    <br>
+                    <br>
+                    <div class="gray">
+                        <b>Soluzione:</b> \(f(-1) = 0\)
+                    </div>
+                </span>
+            </li>
+            <br>
+            <li>
+                <span style="font-weight: normal;">
+                    Qual è la variazione della funzione da \(x = 3\) a \(x = 5\)
+                    <br>
+                    <br>
+                    <div class="gray">
+                        <b>Soluzione:</b> la variazione è di \(-2\).
+                    </div>
+                </span>
+            </li>
+            <br>
+            <li>
+                <span style="font-weight: normal;">
+                    Per quale valore della \(x\) la funzione assume valore \(-2\)?
+                    <br>
+                    <br>
+                    <div class="gray">
+                        <b>Soluzione:</b> \(\,\, x = 1\)
+                    </div>
+                </span>
+            </li>
+            <br>
+            <li>
+                <span style="font-weight: normal;">
+                    &Eacute; vero che \(f(x) > 1\,\,\) per ogni \(x\) maggiore di \(2\)?
+                    <br>
+                    <br>
+                    <div class="gray">
+                        <b>Soluzione:</b> sì, perché in corrispondenza di tali valori della \(x\) il grafico della
+                        funzione \(f\)
+                        sta sopra la retta \(y = 1\)
+                    </div>
+                </span>
+            </li>
+            <br>
+            <li>
+                <span style="font-weight: normal;">
+                    &Eacute; vero che la funzione assume valori negativi per ogni \(x\) minore di \(-1\)?
+                    <br>
+                    <br>
+                    <div class="gray">
+                        <b>Soluzione:</b> no, è vero l'opposto. Per \(x \lt -1\) il grafico della funzione si trova
+                        sotto l'asse delle \(x\).
+                    </div>
+                </span>
+            </li>
+        </ol>
+    </div>
+
+    <br>
+    <br>
+
+    <script src="../../js/hintAndSlide.js"></script>
+
+</body>
