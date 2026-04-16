@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script language="javascript" type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.min.js"></script>
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>Compiti per casa</title>
+</head>
+
+<body>
+    <h1>Compiti per casa</h1>
+
+    <br>
+
+    <h3 class="green">Esercizio</h3>
+    <br>
+    <div>
+        Consideriamo le due funzioni
+        \[
+        f(x) = 4x^2 - 6x + 4 \qquad g(x) = 2x^2 - 3x
+        \]
+        <br>
+        <ol type="A" style="font-weight: bold;">
+            <li>
+                <span style="font-weight: normal;">
+                    Individuare gli <b>zeri della funzione</b> \(g\), ovvero
+                    i valori della \(x\) per i quali la funzione \(g\) assume valore \(0\).
+                </span>
+            </li>
+            <br>
+            <li>
+                <span style="font-weight: normal;">
+                    Stabilire per quali valori della \(x\) si ha \(\dfrac{f(x)}{g(x)} \leq 0\)
+                </span>
+            </li>
+            <br>
+            <li>
+                <span style="font-weight: normal;">
+                    Stabilire per quali valori della \(x\) l'opposto della funzione \(f\) assume valori minori del
+                    triplo della funzione \(g\).
+                </span>
+            </li>
+        </ol>
+    </div>
+
+    <br>
+    <br>
+
+    <button id="hintUademaCCtua-button" onclick="showHint(`UademaCCtua`)">Soluzione</button>
+    <div id="hintUademaCCtua" class="hint gray" style="display: none;">
+        <b class="gray">Soluzione</b>
+
+        <ol type="A" style="font-weight: bold;">
+            <li>
+                <span style="font-weight: normal;">
+                    Si ha che \(g(x) = 0\,\,\) per
+                    \[
+                    x = 0\,\, \text{oppure}\,\, x = \dfrac{3}{2}
+                    \]
+                </span>
+            </li>
+            <br>
+            <li>
+                <span style="font-weight: normal;">
+                    Si ha che \(\dfrac{f(x)}{g(x)} \leq 0\,\,\) per
+                    \[
+                    x \in \left(0\,,\,\,\dfrac{3}{2}\right)
+                    \]
+                </span>
+            </li>
+            <br>
+            <li>
+                <span style="font-weight: normal;">
+                    Si ha che \(-f(x) \lt 3\,g(x)\) per
+                    <div style="font-size: 1rem;">
+                        \[
+                        x \in \left(-\infty\,,\,\,\dfrac{15 - \sqrt{65}}{20}{}\right) \cup \left(\dfrac{15 +
+                        \sqrt{65}}{20}{}\,,\,\,+\infty\right)
+                        \]
+                    </div>
+                </span>
+            </li>
+        </ol>
+    </div>
+
+
+    <br>
+    
+    <div class="gray">
+        ⚠️⚠️⚠️
+            Se non sapete come procedere, guardate il video del primo esercizio della scheda assegnata per la volta scorsa.            
+        ⚠️⚠️⚠️    
+    </div>
+
+
+    <br>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+
+
+
+    <script src="../../js/hintAndSlide.js"></script>
+
+</body>
