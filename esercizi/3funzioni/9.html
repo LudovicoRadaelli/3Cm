@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script language="javascript" type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.min.js"></script>
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>Compiti per casa</title>
+</head>
+
+<body>
+    <h1>Compiti per casa</h1>
+
+    <br>
+
+    <h3 class="yellow">Dominio di una funzione</h3>
+    <div class="esempi-container">
+        <iframe style="width: 100%;" src="https://www.youtube.com/embed/TOHj0VUzhgs?si=cIHJNPVoJDg6hcAo"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+        <br>
+
+        <div class="grayBackground">
+            Il <b>dominio</b> di una funzione è l'insieme dei valori per i quali la funzione è definita.
+        </div>
+    </div>
+
+
+
+
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+
+    <h3 class="green">Esercizio</h3>
+    <br>
+    <div>
+        Consideriamo la funzione
+        \[
+        f(x) = \sqrt{16x^2 -42x + 27}
+        \]
+        <ol type="A" style="font-weight: bold;">
+            <li>
+                <span style="font-weight: normal;">
+                    Individuare il <b>dominio</b> della funzione \(f\)
+                    <br>
+                    (ovvero individuare tutti i valori della \(x\) per i quali la funzione è <b>definita</b>)
+                    <br>
+                    <br>
+                    <button id="hintPndiiAI(1)-button" onclick="showHint(`PndiiAI(1)`)">Soluzione</button>
+                    <div id="hintPndiiAI(1)" class="hint gray" style="display: none;">
+                        <b class="gray">Soluzione</b>
+                        <br>
+                        L'unica operazione "pericolosa" che compare nella funzione è la radice quadrata,
+                        quindi imponiamo che il suo contenuto sia maggiore o uguale di \(0\).
+                        \[
+                        16x^2 -42x + 27 \geq 0
+                        \]
+                        Risolviamo questa disequazione con il metodo della parabola.
+                        <br>
+                        Se soluzioni ci dicono che la funzione è definita per
+                        \[
+                        x \leq -\dfrac{9}{8} \qquad \text{oppure} \qquad x \geq x \geq \dfrac{3}{2}
+                        \]
+                        quindi il suo <b>dominio</b> è l'insieme
+                        \[
+                        D = \Big(-\infty\,,\,\,-\dfrac{9}{8}\Big] \cup \Big(\dfrac{3}{2}\,,\,\,+\infty\Big]
+                        \]
+                    </div>
+
+                </span>
+            </li>
+            <br>
+            <li>
+                <span style="font-weight: normal;">
+                    Studiare il segno della funzione al variare del valore di \(x\).
+                    <br>
+                    <br>
+                    <button id="hintPndiiAI(2)-button" onclick="showHint(`PndiiAI(2)`)">Soluzione</button>
+                    <div id="hintPndiiAI(2)" class="hint gray" style="display: none;">
+                        <b class="gray">Soluzione</b>
+                        <br>
+                        Ci chiediamo: per quali scelta di \(x \in D\) la funzione assume valore positivo?
+                        Ovvero
+                        \[
+                        f(x) \geq 0
+                        \]
+                        \[
+                        \sqrt{16x^2 -42x + 27} \geq 0
+                        \]
+                        La radice quadrata di un numero, se si può svolgere, ha sempre come risultato un numero
+                        maggiore o uguale di \(0\). Quindi la funzione assume valori positivi per ogni valore \(x\)
+                        appartenente al dominio.
+                    </div>
+
+                </span>
+            </li>
+    </div>
+
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+
+
+    <h3 class="green">Esercizio</h3>
+    <br>
+    <div>
+        Consideriamo la funzione
+        \[
+        f(x) = \sqrt{\dfrac{2x - 4}{-5x + 1}}
+        \]
+        Individuare il <b>dominio</b> della funzione \(f\)
+        <br>
+        (ovvero individuare tutti i valori della \(x\) per i quali la funzione è <b>definita</b>)
+        <br>
+        <br>
+        <button id="hintlGpOiuuAXa-button" onclick="showHint(`lGpOiuuAXa`)">Soluzione</button>
+        <div id="hintlGpOiuuAXa" class="hint gray" style="display: none;">            
+            <b>Soluzione:</b>
+            <br>
+            Le operazioni "pericolose" che compaiono nella funzione sono la radice quadrata e la funzione.
+            La radice è definita se il suo argomento è maggiore o uguale a zero (condizione \(\boxed{1}\)), mentre la 
+            frazione è definita se il suo denominatore è diverso da \(0\) (condizione \(\boxed{2}\)).
+            \[
+                \color{transparent}{}
+                \begin{cases}
+                    
+                    \color{gray}{}\boxed{1}
+                    \\\\
+                    \color{gray}{}\boxed{2}
+                \end{cases}
+
+                \color{gray}{}
+                \begin{cases}                    
+                    \dfrac{2x - 4}{-5x + 1} \geq 0
+                    \\\\
+                    -5x + 1 \neq 0 
+                \end{cases}
+            \]
+            Risolvendo questo sistema di condizioni con il grafico d'intersezione otteniamo che
+            la funzione è definita per
+            \[
+            \dfrac{1}{5} \lt x \leq 2
+            \]
+            ovvero il suo dominio è l'insieme
+            \[
+            D = \Big(\dfrac{1}{5}\,,\,\,2\Big]
+            \]
+        </div>        
+    </div>
+
+    <br>
+    <br>
+
+
+
+    <script src="../../js/hintAndSlide.js"></script>
+
+</body>
